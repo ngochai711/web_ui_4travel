@@ -1,0 +1,13 @@
+{"logTime": "0209/125313", "correlationVector":"gQJPuv367F7+s4yvQB7BxW.0","action":"FeedSettingFetch_homeCloud", "result":"0", "context":{}}
+{"logTime": "0209/125313", "correlationVector":"2n4qWBecUk90gPn1TkNs4v.1","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"Prod_EastAsia_000d", "server":"GENERAL0100001H"}}
+{"logTime": "0209/125313", "correlationVector":"2n4qWBecUk90gPn1TkNs4v","action":"Initial GetUpdates", "result":"", "context":Reason: NEW_CLIENT. cV=2n4qWBecUk90gPn1TkNs4v}
+{"logTime": "0209/125313", "correlationVector":"2n4qWBecUk90gPn1TkNs4v.2","action":"GetUpdates Response", "result":"SYNCER_OK", "context":Received 1 update(s). cV=2n4qWBecUk90gPn1TkNs4v.0;server=GENERAL0100001H;cloudType=Consumer;environment=Prod_EastAsia_000d}
+{"logTime": "0209/125315", "correlationVector":"qLADSOd1l0JbhORzXxxzlO","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"", "server":""}}
+{"logTime": "0209/125315", "correlationVector":"F7C7RiFK8apyfud/s/ZBZO","action":"Normal GetUpdate request", "result":"", "context":cV=F7C7RiFK8apyfud/s/ZBZO
+Refresh requested types: Encryption Keys}
+{"logTime": "0209/125315", "correlationVector":"F7C7RiFK8apyfud/s/ZBZO.1","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"Prod_EastAsia_000d", "server":"GENERAL0100001B"}}
+{"logTime": "0209/125315", "correlationVector":"F7C7RiFK8apyfud/s/ZBZO.2","action":"GetUpdates Response", "result":"SYNCER_OK", "context":Received 0 update(s). cV=F7C7RiFK8apyfud/s/ZBZO.0;server=GENERAL0100001B;cloudType=Consumer;environment=Prod_EastAsia_000d}
+{"logTime": "0209/125315", "correlationVector":"ZPzOc1IfVdcxqLIjBNJyNs","action":"Normal GetUpdate request", "result":"", "context":cV=ZPzOc1IfVdcxqLIjBNJyNs
+Refresh requested types: Encryption Keys}
+{"logTime": "0209/125315", "correlationVector":"ZPzOc1IfVdcxqLIjBNJyNs.1","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"Prod_EastAsia_000d", "server":"general0100001P"}}
+{"logTime": "0209/125315", "correlationVector":"ZPzOc1IfVdcxqLIjBNJyNs.2","action":"GetUpdates Response", "result":"SYNCER_OK", "context":Received 0 update(s). cV=ZPzOc1IfVdcxqLIjBNJyNs.0;server=general0100001P;cloudType=Consumer;environment=Prod_EastAsia_000d}
