@@ -211,11 +211,11 @@ class DetailScreen extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                            "Our apartment has 1 living room, dining space, 1 bedroom (1 double bed and sofa bed), 1 bathroom and the balcony.\n"),
+                                            "Căn hộ của chúng tôi có 1 phòng khác, không gian ăn uống, 1 phòng ngủ (giường đôi và giường sofa), 1 phòng tắm và ban công.\n"),
                                         Text(
-                                            "- The bedroom: Our view from the bedroom is romantic with the view of the grand hill shimmering. We provide air-conditioner, the bed topper, and the bolster.\n"),
+                                            "- Phòng ngủ: Có phong cảnh đồi núi rất lãng mạng. Chúng tôi có trang bị máy lạnh, đệm và tấm trải giường.\n"),
                                         Text(
-                                            "- Kitchen: necessary facilities is provided to cook a delicious meal...\n"),
+                                            "- Phòng bếp: cơ sở vật chất cần thiết được cung cấp để nấu một bữa ăn ngon. . .\n"),
                                         Row(
                                           children: <Widget>[
                                             Text(
