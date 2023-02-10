@@ -35,7 +35,7 @@ class OptionUser extends StatelessWidget {
           children: <Widget>[
             HeaderFeature(
               press: () {  }, 
-              title: "Cho thuê chỗ ở qua 4Travel",
+              title: "Cho thuê chỗ ở qua UStay",
             ),
             Container(
               padding: const EdgeInsets.only(right: 20),

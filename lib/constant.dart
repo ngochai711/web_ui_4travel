@@ -4,3 +4,4 @@ const kPrimaryColor = Color(0xFFFFC200);
 const kTextColor = Color(0xFFFFC200);
 const kPadding =30.0;
 const kHeaderHeight = 100.0;
+const kWidth = 800.0;
