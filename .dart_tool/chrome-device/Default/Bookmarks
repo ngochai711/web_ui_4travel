@@ -1,0 +1,160 @@
+{
+   "checksum": "cbc1a197fc4de536477526caf49712f9",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13307555316761977",
+            "date_last_used": "0",
+            "guid": "e37a1ab4-4d0a-413f-82fe-a6a641d56e8a",
+            "id": "5",
+            "name": "Material Symbols and Icons - Google Fonts",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://fonts.google.com/icons?selected=Material+Icons"
+         }, {
+            "date_added": "13309705660486598",
+            "date_last_used": "0",
+            "guid": "fda2707d-7d29-4e08-96ea-61f2e2f89d9e",
+            "id": "6",
+            "name": "One Piece Spoiler Chapter 1062 | Diễn Đàn truyện tranh và anime",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://photruyen.net/threads/one-piece-spoiler-chapter-1062.4446/?fbclid=IwAR1UgSUoRkOr2KhgK-xBDl_zhi8RHv_abLBhrj2re9zdJVVvcimRFGP9gYc"
+         }, {
+            "date_added": "13312558577048212",
+            "date_last_used": "0",
+            "guid": "e98574a7-d636-4a7a-a480-5055671a535e",
+            "id": "7",
+            "name": "Free Fshare Code by J2TEAM | Fcode miễn phí 2022",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://j2team.dev/fshare-code"
+         }, {
+            "date_added": "13316881141183597",
+            "date_last_used": "0",
+            "guid": "c9946ab0-1a23-48c6-a52b-84e681233a07",
+            "id": "8",
+            "name": "[Last updated 11/2022] NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno) (Udemy - Vietsub and Engsub)",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://tailieusharefree.blogspot.com/2022/12/nodejs-the-complete-guide.html"
+         }, {
+            "children": [ {
+               "date_added": "13312230047806918",
+               "date_last_used": "13313130996908034",
+               "guid": "52d18f7f-0175-4ffb-aca9-385abac8db4e",
+               "id": "10",
+               "name": "bukunmialuko/flutter_ui_kit_obkm: 100+ Mobile & Web UI Kit",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://github.com/bukunmialuko/flutter_ui_kit_obkm?fbclid=IwAR1L6rZfGxICGZiyPEl2JD8BMwwYLZnt0O5z1UreI7JpWCPdyuscKiTE6io"
+            }, {
+               "date_added": "13312229636847972",
+               "date_last_used": "13316784743552103",
+               "guid": "ddf278af-0377-4c9d-a09f-adcdb000a923",
+               "id": "11",
+               "name": "Fshare - Udemy Courses - Fshare",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.fshare.vn/folder/UQVWOFP44YA7?token=1667754254"
+            }, {
+               "date_added": "13313508588137695",
+               "date_last_used": "13317897492696283",
+               "guid": "b0b56357-db82-45e1-a5f2-85a878196e8f",
+               "id": "12",
+               "name": "Code With Andrea",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://courses.codewithandrea.com/"
+            }, {
+               "date_added": "13316619768623042",
+               "date_last_used": "13317897151850673",
+               "guid": "92b5d2b1-e026-4efb-aabc-c99e82db772f",
+               "id": "13",
+               "name": "10 Best Practices for Flutter Developers | by udit ajmera | Agoda Engineering & Design | Dec, 2022 | Medium",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://medium0.com/agoda-engineering/10-best-practices-for-flutter-developers-a8327c986433?fbclid=IwAR2R6lYJEApqagh9lLVD7vOvkeB03p0Qdl8JTUG2LAZyiFmEeBQ31bYuAIo"
+            }, {
+               "date_added": "13313511954288612",
+               "date_last_used": "13316784803601024",
+               "guid": "eb3557f5-e56c-446b-90cd-35eba89fac76",
+               "id": "14",
+               "name": "MEGA ↓ 2%",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://mega.nz/folder/C0BmXZhC#G57vmsZ9ENh-lFUV6j5J5g"
+            }, {
+               "date_added": "13311614017953308",
+               "date_last_used": "0",
+               "guid": "dab29d11-f580-4981-b746-b0eef8e051ea",
+               "id": "15",
+               "name": "Best practices for laying out your Flutter app - LogRocket Blog",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://blog.logrocket.com/best-practices-laying-out-flutter-app/"
+            }, {
+               "date_added": "13319885291496079",
+               "date_last_used": "0",
+               "guid": "7bf070e7-5906-4b8b-86bd-cdca3ef70632",
+               "id": "16",
+               "name": "18.218.244.144/intern/apis/news?page=2",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "http://18.218.244.144/intern/apis/news?page=2"
+            } ],
+            "date_added": "13317897467477524",
+            "date_last_used": "0",
+            "date_modified": "13319885291496079",
+            "guid": "3aacf6e8-e862-4ede-beb2-38cd2616391b",
+            "id": "9",
+            "name": "Flutter",
+            "source": "unknown",
+            "type": "folder"
+         } ],
+         "date_added": "13320432574875793",
+         "date_last_used": "0",
+         "date_modified": "13316881141183597",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13320432574875796",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13320432574875797",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CjEKDgiIgQISCPCe8DaGAQAAEgAgASoYazhxbzJNOTFCSFVveStIVk91bEg4dz09oAYMEqgBCA4SowEKHHpsSThxN1dwYTdTSDl1WURoakFUanUrNm5ZYz0SJGViMzU1N2Y1LWU1NmMtNDQ2Yi05MGNkLTM1ZWJhODlmYWM3NhgAIAAoADDL6Nr+2TA4zvDA08kwQM7wwNPJMEocZG9UWlZ3K1RRamRTdUhlam9kVGcxVWVlWWY0PVofIh3eaVc0VDUzWVNjVk04OHlzUUtyY0RQNThtY2FJPWX/JP83EqgBCA0SowEKHEc3b09DSWs4dWFlZXhaV1dwUGhTWVRsZDdFWT0SJDkyYjVkMmIxLWUwMjYtNGVmYi1hYWJjLWM5OWU4MmRiNzcyZhgAIAAoADC96Nn+2TA4lvS2ndUwQJb0tp3VMEocSkRUb1pleGZqdFF6U1JkVk44b2Y0YVRmUmVnPVofIh29T0oxZk5kTDhTVGV1ODdVVmxYRFZxSFZhd1BRPWVbhUNjEqsBCAkSpgEKHGExdlgxT21zaTloVDdEVXpkbkoxYWp6T2lnZz0SJDNhYWNmNmU4LWU4NjItNGVkZS1iZWIyLTM4Y2QyNjE2MzkxYhgAIAAoADCfo9f+2TA41KPX/tkwQNSj1/7ZMEocKzVvOWxIRFJra1hMTzhXQy95ZlZpaGpDMkNVPVoiIiD///+4VHVJWE1qUmc4L2xZT3JUeHVEVmd3aGVNc09FPWUAAAAAEqgBCBASowEKHGFqWmlRZ1NRczhVYkhQNjFmY0U0dUZaRWJLND0SJDdiZjA3MGU3LTU5MDYtNGI4Yi04NmJkLWNkY2EzZWY3MDYzMhgAIAAoADCJwcay4TA4u8HGsuEwQLvBxrLhMEocZEtNVCt0eEpCUkFpUG9yYTNNUFM2SVRBTTNRPVofIh33MXJPNFI4Znk4Rm1iQ1ZveHg2QUdGQy8xZ3NBPWUAAAAAEqcBCAsSogEKHDZTSm4vOFV4a2lVdjBWMW01MVI1a1NSL2RUOD0SJGRkZjI3OGFmLTAzNzctNGM5ZC1hMDlmLWFkY2RiMDAwYTkyMxgAIAAoADDR1Nj+2TA4hK6G8MQwQISuhvDEMEocVVpENHJXTXRlQk1Md2xFblhPbWtjOW1qb2N3PVoeIhxZbjMyUHIzMUI4ZFVNbE9VNGlXUERRZ3NjUXc9ZSV5E4MSqgEIBxKlAQocS3VuRHhpYURxUXZjUHlxaUtERloxdjhxbXdFPRIkZTk4NTc0YTctZDYzNi00YTdhLWE0ODAtNTA1NTY3MWE1MzVlGAAgAigCMOq9wrfjMDjWp/OMxjBAzJHCt+MwShx4eXFWK2tHa1RjUndFbStXNlhhVU9kRXduc0E9WiEiH///61A5Z05WK3pjWnhVL0crWTU1SDA4ZUFBRjNUbz1lThCrAhKpAQgGEqQBChxNQlZ1bXlweDNlaU9UbmppWjFTZ3AyalpvS3c9EiRmZGEyNzA3ZC03ZDI5LTRlMDgtOTZlYS02MWYyZTJmODlkOWUYACAAKAAwpInDvLswOO+Jw7y7MEDvicO8uzBKHFc0eHAvbWl0dmVEOVBGYmZsRnNxWWNPNU5YOD1aICIe//t4VW9wZjlPTlZKNU5mT0VEVEREaFBuTUhFa2s9ZQAAAAASqAEIDxKjAQoceFJtSTc2K29vOEpPUnRHRGVnbXdoTTJmTzA4PRIkZGFiMjlkMTEtZjU4MC00OTgxLWI3NDYtYjBlZWY4ZTA1MWVhGAAgACgAMJzq3f7ZMDiJgsDKwjBAiYLAysIwShxUR09HekxCRjdwK2V3ZjMzNU51ZzZoMHhzN289Wh8iHe80bnd0YVQ1bWhUVG1CM2ticVJsSmhqb0wwUU09ZSwwsykSqQEIBRKkAQocam9ldEdySndEOFg2V2xnYjFQVkxRRzUzYVZBPRIkZTM3YTFhYjQtNGQwYS00MTNmLTgyZmUtYTZhNjQxZDU2ZThhGAAgAigCMOm9wrfjMDjrvZS7szBAzJHCt+MwShx3TStNZGxCaTRUaTR0RUthcjBHNGtPTVhTa2M9WiAiHv/bV0RQeVZZTGVEekxKVUR2VmhJY2p2QkVEbnEwPWUL/TomEqoBCAgSpQEKHHFkRUdxY0Q5U3NIMWNCT2pCN0E3YjRNRHp4Yz0SJGM5OTQ2YWIwLTFhMjMtNDhjNi1hNTJiLTg0ZTY4MTIzM2EwNxgAIAIoAjDovcK34zA4k9yHmtYwQM2RwrfjMEocQThVUGYrUU9LeGRxaGpFTGVpZ25mM3hHYW9RPVohIh////9wcHB4NHV1SzZYeGloc25CNktJcDdjMDd0dUU9ZZsqdFYSpwEIDBKiAQocd3Z3NWJveHJkV2daMUZJcm5PZ3BLZG05YldZPRIkYjBiNTYzNTctZGI4Mi00NWUxLWE1ZjItODVhODc4MTk2ZThmGAAgACgAMOac2f7ZMDiEsvPRyTBAhLLz0ckwShwxOXA0MGFGdy9jZ0tOUzM1KzNTWklLdkVUdEk9Wh4iHHpaZCtMczFmc1pDN3RrOFBWclMyOFc0NmlURT1l3le0QhKnAQgKEqIBChwwdEhsRWY2RmVlamZXYjR0MnZBZ0dVWmpFbFE9EiQ1MmQxOGY3Zi0wMTc1LTRmZmItYWNhOS0zODVhYmFjOGRiNGUYACAAKAAwoKPX/tkwOIq5n/DEMECKuZ/wxDBKHDloN3dIYXluMWloZHpEdFZyVjZnWFk5b3hRST1aHiIcK2NBd2hkRnBXT2duK2NYdWZGUkhVVWJVcEFFPWUIDEouEokBCAIShAEKHFljU1RvbnZFU1B3cUNzNEwyY3JWaHY2OEw5OD0SJGE4YTkzOWUwLTQwMTgtNTcyNy1hNjI0LTBiMmUwMzQzYTE1ORgAIAAoADDssNznszA4ueCf5PEvQLngn+TxL0ocb1BWa2h3QlJiVjY1S0NXUjIrSU9OSFdvT3U4PVoAZQAAAAASiQEIARKEAQoceXhKLzZmdmtlY3I3a3A1RVF6QjR0V0xwZGJFPRIkNGJkZTc0MDAtMTA5Mi01OTliLTkwMTgtODE2MWUzNGY3OGM5GAAgACgAMOyw3OezMDip4J/k8S9AqeCf5PEvShxhUkNXTGdoRjliNUlucUtJRHZ1Si9qdlFrRmM9WgBlAAAAABKJAQgDEoQBChxuamdEdTg4ZUNydlhwODZwRDdmSEdjcUZwODg9EiQyMzUxNDAzZi01Mzc1LTU5NTMtYWQ1Ny1mNTNlYjYzYTdhZjQYACAAKAAw7LDc57MwOPjgn+TxL0D44J/k8S9KHHl6TkIwMWNuNTRBN2NSVTB1VCsvUGdtVHRVbz1aAGUAAAAAMAA4AA==",
+   "version": 1
+}
