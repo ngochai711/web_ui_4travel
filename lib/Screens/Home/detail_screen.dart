@@ -367,23 +367,14 @@ class DetailScreen extends StatelessWidget {
                                                     ),
                                                   ]),
                                             ),
-                                            Container(
-                                              width: 150,
-                                              padding: EdgeInsets.all(10),
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(width: 1),
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10)),
-                                              child: Text(
-                                                "Hiển thị tất cả 18 tiện nghi",
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    decoration: TextDecoration
-                                                        .underline),
-                                              ),
-                                            ),
+                                            SizedBox(
+                                              height: 60,
+                                              width: 140,
+                                              child: CustomButton(
+                                                  text:
+                                                      'Hiển thị tất cả 18 tiện nghi',
+                                                  isFill: false),
+                                            )
                                           ],
                                         ),
                                       ]),
@@ -525,8 +516,12 @@ class DetailScreen extends StatelessWidget {
                                           ),
                                         ),
                                         Text("\n"),
-                                        CustomButton(
-                                            text: "Đặt Phòng", isFill: true),
+                                        SizedBox(
+                                          height: 45,
+                                          width: 300,
+                                          child: CustomButton(
+                                              text: "Đặt Phòng", isFill: true),
+                                        ),
                                         Text("\n\n"),
                                         Row(
                                           children: [
@@ -602,6 +597,494 @@ class DetailScreen extends StatelessWidget {
                       ),
                     ]),
               ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 150),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 22.0),
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 16,
+                            ),
+                            Row(
+                              children: [
+                                const Icon(Icons.star),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                const Text(
+                                  '4.83 • 83 Đánh giá',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 16,
+                            ),
+                            SizedBox(
+                              height: 80,
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            const Text(
+                                              'Mức độ sạch sẽ',
+                                              style: TextStyle(),
+                                            ),
+                                            const Text(
+                                              'Giao tiếp',
+                                              style: TextStyle(),
+                                            ),
+                                            const Text(
+                                              'Nhận phòng',
+                                              style: TextStyle(),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            SizedBox(
+                                                height: 20,
+                                                child: CustomSlider(context)),
+                                            SizedBox(
+                                                height: 20,
+                                                child: CustomSlider(context)),
+                                            SizedBox(
+                                                height: 20,
+                                                child: CustomSlider(context)),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 100,
+                                  ),
+                                  Expanded(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            const Text(
+                                              'Độ chính xác',
+                                              style: TextStyle(),
+                                            ),
+                                            const Text(
+                                              'Vị trí',
+                                              style: TextStyle(),
+                                            ),
+                                            const Text(
+                                              'Giá trị',
+                                              style: TextStyle(),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            SizedBox(
+                                                height: 20,
+                                                child: CustomSlider(context)),
+                                            SizedBox(
+                                                height: 20,
+                                                child: CustomSlider(context)),
+                                            SizedBox(
+                                                height: 20,
+                                                child: CustomSlider(context)),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 32,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 22.0),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  ReviewItem('Vy', 'tháng 11 năm 2022',
+                                      'Thời gian linh hoạt'),
+                                  ReviewItem('Tú', 'tháng 11 năm 2022',
+                                      'Nhà sạch sẽ, nội thất tiện nghi đầy đủ. Có dịp sẽ quay lại.'),
+                                  ReviewItem('Trung', 'tháng 11 năm 2022',
+                                      'Dịch vụ class of world , đỉnh view đẹp phòng đầy đủ tiện nghi ạ')
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 100,
+                            ),
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  ReviewItem('Duc Thag', 'tháng 11 năm 2022',
+                                      'View đẹp, riêng tư, thoáng mát, giá cả hợp lý.'),
+                                  ReviewItem(
+                                      'Thị Phương Trang',
+                                      'tháng 11 năm 2022',
+                                      'Mình về sớm hơn dự kiến được chị chủ nhà offer refund lại một phần.'),
+                                  ReviewItem('Trung', 'tháng 11 năm 2022',
+                                      'Một nơi để nghĩ dưỡng .')
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 20),
+                        width: 250,
+                        height: 45,
+                        child: CustomButton(
+                            isFill: false, text: 'Hiển thị tất cả 83 đánh giá'),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 16, horizontal: 20),
+                        child: Divider(color: Colors.black.withOpacity(0.6)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Text(
+                          'Nơi bạn sẽ đến',
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                        child: Image(
+                            image: AssetImage('../assets/images/map.png')),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Thành phố Vũng Tàu, Bà Rịa - Vũng Tàu, Việt Nam',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                              SizedBox(
+                                height: 16,
+                              ),
+                              Text(
+                                'Tran Phu street is the most beautiful str. in Vung Tau City and you can easy to walk along the Bai Dau to Bai Truoc from the apartment.- Vung Tau local and seafood, LotteMart supermarket can be driven to by motobike in 10-15mins- Gành Hào seafood restaurant: it is direct Seaview next to the beach, the food and rate are fine. We highly recommend this place...',
+                                style: TextStyle(
+                                  height: 1.3,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 16,
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    'Hiển thị thêm',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w600),
+                                  ),
+                                  SizedBox(
+                                    width: 4,
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    size: 14,
+                                    color: Colors.black,
+                                  )
+                                ],
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 16),
+                                child: Divider(
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                              Text(
+                                'Những điều cần biết',
+                                style: TextStyle(
+                                    fontSize: 22, fontWeight: FontWeight.w600),
+                              ),
+                              SizedBox(
+                                height: 16,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Nội quy nhà',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14),
+                                        ),
+                                        Text(
+                                          'Nhận phòng sau 14:00\nTrả phòng trước 12:00\nTối đa 3 khách',
+                                          style: TextStyle(height: 2),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              'Hiển thị thêm',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                            SizedBox(
+                                              width: 4,
+                                            ),
+                                            Icon(
+                                              Icons.arrow_forward_ios_outlined,
+                                              size: 14,
+                                              color: Colors.black,
+                                            )
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'An toàn và chỗ ở',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14),
+                                        ),
+                                        Text(
+                                          'Camera an ninh/thiết bị ghi\nMáy phát hiện khí CO\nMáy báo khói',
+                                          style: TextStyle(height: 2),
+                                        ),
+                                        SizedBox(
+                                          height: 6,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              'Hiển thị thêm',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                            SizedBox(
+                                              width: 4,
+                                            ),
+                                            Icon(
+                                              Icons.arrow_forward_ios_outlined,
+                                              size: 14,
+                                              color: Colors.black,
+                                            )
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Chính sách hủy',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14),
+                                        ),
+                                        Text(
+                                          'Hủy miễn phí trước 3 thg 2.\nHãy đọc toàn bộ chính sách hủy của Chủ nhà/Người tổ chức được áp dụng ngay cả khi bạn hủy vì ốm bệnh hoặc gián đoạn ',
+                                          style: TextStyle(height: 2),
+                                        ),
+                                        SizedBox(
+                                          height: 6,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              'Hiển thị thêm',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                            SizedBox(
+                                              width: 4,
+                                            ),
+                                            Icon(
+                                              Icons.arrow_forward_ios_outlined,
+                                              size: 14,
+                                              color: Colors.black,
+                                            )
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 32,
+                              ),
+                            ]),
+                      )
+                    ]),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 170),
+                width: MediaQuery.of(context).size.width,
+                height: 310,
+                decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.2),
+                    border: Border(
+                        top:
+                            BorderSide(color: Colors.black.withOpacity(0.26)))),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Chính sách hủy',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 14),
+                              ),
+                              Text(
+                                'Trung tâm trợ giúp\n4TravelCover\nHỗ trợ người khuyết tật\nCác tùy chọn hủy\nBiện pháp ứng phó với đại dịch COVID-19 của chúng tôi\nBáo cáo lo ngại của hàng xóm',
+                                style: TextStyle(
+                                    height: 2.4,
+                                    color: Colors.black.withOpacity(0.63),
+                                    decoration: TextDecoration.underline),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Cộng đồng',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 14),
+                              ),
+                              Text(
+                                'Nhà ở cứu trợ\nChống phân biệt đối xử',
+                                style: TextStyle(
+                                    height: 2.4,
+                                    color: Colors.black.withOpacity(0.63),
+                                    decoration: TextDecoration.underline),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Đón tiếp khách',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 14),
+                              ),
+                              Text(
+                                'Cho thuê nhà trên 4Travel\n4TravelCover cho Chủ nhà\nXem tài nguyên đón tiếp khách\nTruy cập diễn đàn cộng đồng\nĐón tiếp khách có trách nhiệm',
+                                style: TextStyle(
+                                    height: 2.4,
+                                    color: Colors.black.withOpacity(0.63),
+                                    decoration: TextDecoration.underline),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '4Travel',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 14),
+                              ),
+                              Text(
+                                'Trang tin tức\nTìm hiểu các tính năng mới\nThư ngỏ từ các nhà sáng lập\nCơ hội nghề nghiệp\nNhà đầu tư',
+                                style: TextStyle(
+                                    height: 2.4,
+                                    color: Colors.black.withOpacity(0.63),
+                                    decoration: TextDecoration.underline),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ));
@@ -609,7 +1092,7 @@ class DetailScreen extends StatelessWidget {
 
   Padding ReviewItem(name, date, review) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 32.0),
+      padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(
           children: [
@@ -625,7 +1108,9 @@ class DetailScreen extends StatelessWidget {
               children: [
                 Text(
                   name,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(
                   height: 4,
@@ -644,7 +1129,7 @@ class DetailScreen extends StatelessWidget {
         ),
         Text(
           review,
-          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+          style: TextStyle(fontWeight: FontWeight.w500),
         )
       ]),
     );
@@ -758,6 +1243,7 @@ class CustomButton extends StatelessWidget {
         onPressed: () {},
         child: Text(
           text,
+          textAlign: TextAlign.center,
           style: TextStyle(
               color: !isFill ? Colors.black : Colors.white, fontSize: 16),
         ));
