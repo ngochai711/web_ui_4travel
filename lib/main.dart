@@ -1,4 +1,4 @@
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:web_ui_4travel/Screens/Home/detail_screen.dart';
 import 'package:web_ui_4travel/Screens/Home/home_screen.dart';
 import 'package:web_ui_4travel/constant.dart';
@@ -37,7 +37,7 @@ class DetailPage extends StatelessWidget {
         primarySwatch: Colors.amber,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const DetailScreen(),
+      home: HomeScreen(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_ui_4travel/Screens/Home/detail_screen.dart';
 import 'package:web_ui_4travel/constant.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'components/chart_price_range.dart';
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late AnimationController controller;
   late ScrollController _scrollController;
   late ScrollController _tabScrollController;
-  var tabOffset = 0.0; 
+  var tabOffset = 0.0;
   // scroll controller
   bool flagShowAmenities = false;
   var index = 0;
@@ -110,15 +111,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       initialDate: _selectedDate,
       firstDate: DateTime.now(),
       lastDate: DateTime(2101),
-       builder: (context, child) {
+      builder: (context, child) {
         return Theme(
           data: Theme.of(context).copyWith(
-            colorScheme:  ColorScheme.light(
-              primary: ColorConstants.bottomBarItemPrimary, // header background color
+            colorScheme: ColorScheme.light(
+              primary: ColorConstants
+                  .bottomBarItemPrimary, // header background color
               onPrimary: Colors.white, // header text color
               onSurface: Colors.black, // body text color
             ),
-            
           ),
           child: child!,
         );
@@ -130,6 +131,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       });
     }
   }
+
   @override
   void initState() {
     super.initState();
@@ -143,8 +145,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         }
       });
 
-     _scrollController = ScrollController();
-     _tabScrollController = ScrollController();
+    _scrollController = ScrollController();
+    _tabScrollController = ScrollController();
     controller = BottomSheet.createAnimationController(this);
 
     // Animation duration for displaying the BottomSheet
@@ -154,6 +156,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     // Set animation curve duration for the BottomSheet
     controller.drive(CurveTween(curve: Curves.easeIn));
   }
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -167,15 +170,22 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     controller.dispose();
     super.dispose();
   }
+
   void _scrollToTop() {
     _scrollController.animateTo(0,
         duration: const Duration(seconds: 1), curve: Curves.linear);
   }
+
   void _scrollTab(bool isBack) {
-   tabOffset = isBack ? (tabOffset - 500  < 0  ? 0 : tabOffset - 500  ): (tabOffset + 500 > _tabScrollController.position.maxScrollExtent ? _tabScrollController.position.maxScrollExtent : tabOffset + 500 );
+    tabOffset = isBack
+        ? (tabOffset - 500 < 0 ? 0 : tabOffset - 500)
+        : (tabOffset + 500 > _tabScrollController.position.maxScrollExtent
+            ? _tabScrollController.position.maxScrollExtent
+            : tabOffset + 500);
     _tabScrollController.animateTo(tabOffset,
         duration: const Duration(milliseconds: 500), curve: Curves.linear);
   }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -189,272 +199,285 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         backgroundColor: Colors.white,
         body: ResponsiveWidget(
           largeScreen: mainScreen(),
-        )
-              );
+        ));
   }
+
   Widget mainScreen() {
     Size size = MediaQuery.of(context).size;
     return Column(
-          children: [
-            Expanded(
-              flex: 10,
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children:  [
-                    SizedBox(
-                      height: size.height * 0.1,
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 70.0),
-                        width: size.width,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            IconButton(
-                              
-                              onPressed: (){
-                               _scrollTab(true);
-                            }, icon:  Icon(Icons.arrow_circle_left_outlined,
-                                color:  ColorConstants.bottomBarItemPrimary
-                                      .withOpacity(0.5)), iconSize: 30,),
-                            Expanded(
-                              flex: 5,
-                              child: SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                controller: _tabScrollController,
-                                child: TabBar(
-                                  isScrollable: true,
-                                  controller: _tabController,
-                                  physics: const BouncingScrollPhysics(),
-                                  labelColor: Colors.black,
-                                  unselectedLabelColor: ColorConstants.textColor1,
-                                  indicatorColor: Colors.black,
-                                  tabs: tabs
-                                      .map(
-                                        (e) => FittedBox(
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(right: 10.0),
-                                            child: Tab(
-                                              icon: SvgPicture.asset(
-                                                e.assetIcon!,
-                                                height: 20,
-                                                width: 20,
-                                                colorFilter: ColorFilter.mode(
-                                                    indexTab == e.index!
-                                                        ? Colors.black
-                                                        : ColorConstants.textColor1,
-                                                    BlendMode.srcIn),
-                                              ),
-                                              text: e.text!,
-                                            ),
+      children: [
+        Expanded(
+          flex: 10,
+          child: Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: size.height * 0.1,
+                  child: Container(
+                    padding: const EdgeInsets.only(left: 70.0),
+                    width: size.width,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            _scrollTab(true);
+                          },
+                          icon: Icon(Icons.arrow_circle_left_outlined,
+                              color: ColorConstants.bottomBarItemPrimary
+                                  .withOpacity(0.5)),
+                          iconSize: 30,
+                        ),
+                        Expanded(
+                          flex: 5,
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            controller: _tabScrollController,
+                            child: TabBar(
+                              isScrollable: true,
+                              controller: _tabController,
+                              physics: const BouncingScrollPhysics(),
+                              labelColor: Colors.black,
+                              unselectedLabelColor: ColorConstants.textColor1,
+                              indicatorColor: Colors.black,
+                              tabs: tabs
+                                  .map(
+                                    (e) => FittedBox(
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 10.0),
+                                        child: Tab(
+                                          icon: SvgPicture.asset(
+                                            e.assetIcon!,
+                                            height: 20,
+                                            width: 20,
+                                            colorFilter: ColorFilter.mode(
+                                                indexTab == e.index!
+                                                    ? Colors.black
+                                                    : ColorConstants.textColor1,
+                                                BlendMode.srcIn),
                                           ),
-                                        ),
-                                      )
-                                      .toList(),
-                                ),
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                _scrollTab(false);
-                              },
-                              icon:  Icon(Icons.arrow_circle_right_outlined , color: ColorConstants.bottomBarItemPrimary.withOpacity(0.5),),
-                              iconSize: 30,
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      height: 35,
-                                      width: 100,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                            width: 0.5,
-                                            color: ColorConstants.borderColor1),
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(46),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            blurRadius: 1,
-                                            blurStyle: BlurStyle.outer,
-                                            color: ColorConstants.borderColor1,
-                                          ),
-                                        ],
-                                      ),
-                                      child: InkWell(
-                                        onTap: () {
-                                          showFilter();
-                                        },
-                                        child: SizedBox(
-                                          width: 70,
-                                          child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: <Widget>[
-                                                SvgPicture.asset(
-                                                  "assets/icons/filter.svg",
-                                                ),
-                                                const Text('Bộ lọc')
-                                              ]),
+                                          text: e.text!,
                                         ),
                                       ),
                                     ),
-                                  ],
-                                ),
-                              ),
+                                  )
+                                  .toList(),
                             ),
-                          ],
+                          ),
                         ),
-                      ),
+                        IconButton(
+                          onPressed: () {
+                            _scrollTab(false);
+                          },
+                          icon: Icon(
+                            Icons.arrow_circle_right_outlined,
+                            color: ColorConstants.bottomBarItemPrimary
+                                .withOpacity(0.5),
+                          ),
+                          iconSize: 30,
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 35,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        width: 0.5,
+                                        color: ColorConstants.borderColor1),
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(46),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 1,
+                                        blurStyle: BlurStyle.outer,
+                                        color: ColorConstants.borderColor1,
+                                      ),
+                                    ],
+                                  ),
+                                  child: InkWell(
+                                    onTap: () {
+                                      showFilter();
+                                    },
+                                    child: SizedBox(
+                                      width: 70,
+                                      child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: <Widget>[
+                                            SvgPicture.asset(
+                                              "assets/icons/filter.svg",
+                                            ),
+                                            const Text('Bộ lọc')
+                                          ]),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Expanded(
-                      child: TabBarView(
-                        controller: _tabController,
-                        children: [
-                          SingleChildScrollView(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                              child: GridView.builder(
-                                 shrinkWrap: true,
-                                  physics: const ScrollPhysics(),
-                                  gridDelegate:
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Expanded(
+                  child: TabBarView(
+                    controller: _tabController,
+                    children: [
+                      SingleChildScrollView(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                          child: GridView.builder(
+                              shrinkWrap: true,
+                              physics: const ScrollPhysics(),
+                              gridDelegate:
                                   const SliverGridDelegateWithMaxCrossAxisExtent(
                                 maxCrossAxisExtent: 400,
                                 mainAxisSpacing: 16,
                                 crossAxisSpacing: 9,
                                 mainAxisExtent: 400,
                               ),
-                                  scrollDirection: Axis.vertical,                            
-                                  itemCount: 40,
-                                  itemBuilder: (BuildContext context, int index) {
-                                    return Container(
-                                     
-                                      margin: const EdgeInsets.symmetric(horizontal: 20 ),
-                                      
-                                      child: itemRender(size),
-                                    );
-                                  }),
-                            ),
-                          ),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                          const Text('hi'),
-                        ],
+                              scrollDirection: Axis.vertical,
+                              itemCount: 40,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Container(
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 20),
+                                  child: itemRender(size),
+                                );
+                              }),
+                        ),
                       ),
-                    )
-                  ],
-                ),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                      const Text('hi'),
+                    ],
+                  ),
+                )
+              ],
             ),
-    )],
+          ),
+        )
+      ],
     );
   }
+
   Widget itemRender(Size size) {
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          height: size.height * 0.4,
-          
-          decoration: BoxDecoration(
-            color: Colors.transparent,
-            borderRadius: BorderRadius.circular(10)),
-          child: Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15.0),
-                child: Carousel(
-                  dotSize: 6.0,
-                  dotSpacing: 15.0,
-                  dotPosition: DotPosition.bottomCenter,
-                  autoplay: false,
-                  
-                  overlayShadowColors: Colors.transparent,
-                  animationDuration: const Duration(milliseconds: 1000),
-                  images: [
-                    Image.asset('assets/images/1.png', fit: BoxFit.cover),
-                    Image.asset('assets/images/2.png', fit: BoxFit.cover),
-                    Image.asset('assets/images/3.png', fit: BoxFit.cover),
-                    Image.asset('assets/images/4.png', fit: BoxFit.cover),
-                    Image.asset('assets/images/5.png', fit: BoxFit.cover),
-                  ],
+    return InkWell(
+      onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailScreen(),
+          )),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height: size.height * 0.4,
+            decoration: BoxDecoration(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(10)),
+            child: Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Carousel(
+                    dotSize: 6.0,
+                    dotSpacing: 15.0,
+                    dotPosition: DotPosition.bottomCenter,
+                    autoplay: false,
+                    overlayShadowColors: Colors.transparent,
+                    animationDuration: const Duration(milliseconds: 1000),
+                    images: [
+                      Image.asset('assets/images/1.png', fit: BoxFit.cover),
+                      Image.asset('assets/images/2.png', fit: BoxFit.cover),
+                      Image.asset('assets/images/3.png', fit: BoxFit.cover),
+                      Image.asset('assets/images/4.png', fit: BoxFit.cover),
+                      Image.asset('assets/images/5.png', fit: BoxFit.cover),
+                    ],
+                  ),
                 ),
-              ),
-              Positioned(
-                  right: 10,
-                  top: 10,
-                  child: IconButton(
-                    icon: const Icon(
-                      Icons.favorite_border,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {},
-                  ))
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                'Hotel',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              Row(
-                children: const [Icon(Icons.star), Text('4.1')],
-              ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 5),
-          child: Text(
-            'Cách 1 km',
-            style: TextStyle(
-              color: ColorConstants.textColor1,
+                Positioned(
+                    right: 10,
+                    top: 10,
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.favorite_border,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {},
+                    ))
+              ],
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 5),
-          child: Text(
-            'Ngày 20 - 23 , Tháng 2',
-            style: TextStyle(
-              color: ColorConstants.textColor1,
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'Hotel',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                Row(
+                  children: const [Icon(Icons.star), Text('4.1')],
+                ),
+              ],
             ),
           ),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(top: 5),
-          child: Text(
-            '100.5 \$',
-            style: TextStyle(fontWeight: FontWeight.bold),
+          Padding(
+            padding: const EdgeInsets.only(top: 5),
+            child: Text(
+              'Cách 1 km',
+              style: TextStyle(
+                color: ColorConstants.textColor1,
+              ),
+            ),
           ),
-        ),
-      ],
+          Padding(
+            padding: const EdgeInsets.only(top: 5),
+            child: Text(
+              'Ngày 20 - 23 , Tháng 2',
+              style: TextStyle(
+                color: ColorConstants.textColor1,
+              ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(top: 5),
+            child: Text(
+              '100.5 \$',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -468,8 +491,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       //     borderRadius: BorderRadius.only(
       //         topLeft: Radius.circular(20), topRight: Radius.circular(20))),
       builder: (context) => StatefulBuilder(
-        builder: (BuildContext context, StateSetter updateState) {
-          return AlertDialog(
+          builder: (BuildContext context, StateSetter updateState) {
+        return AlertDialog(
             actions: [
               Container(
                 height: 70,
@@ -478,8 +501,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     color: Colors.transparent,
                     border: Border.all(
                         width: 1, color: ColorConstants.borderColor1),
-                    borderRadius:  BorderRadius.circular(
-                        10)),
+                    borderRadius: BorderRadius.circular(10)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -490,13 +512,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                               color: Colors.black87)),
                       onPressed: () {
                         updateState(() => deleteAll());
-      
+
                         _scrollToTop();
                       },
                     ),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black),
+                            backgroundColor: Color(0xFFF76E11)),
                         onPressed: () {
                           Navigator.of(context).pop();
                           Navigator.push(context,
@@ -504,7 +526,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             // do something
                             return const HomeScreen();
                           }));
-                        
                         },
                         child: const Padding(
                           padding: EdgeInsets.all(10.0),
@@ -515,407 +536,418 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ),
             ],
             content: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.5,
-                height: MediaQuery.of(context).size.height * 0.7,
-                child: Scaffold(
-                  backgroundColor: Colors.transparent,
-                  
-                  body: Column(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 15, bottom: 20),
-                        height: 5,
-                        width: 40,
-                        decoration: BoxDecoration(
-                            color: ColorConstants.borderColor1,
-                            borderRadius: BorderRadius.circular(5)),
-                      ),
-                      Expanded(
-                        child: SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          controller: _scrollController,
-                          child: Column(
-                            children: [
-                              Container(
-                                margin: const EdgeInsets.only(top: 10),
-                                height: 170,
-                                width: double.infinity,
-                                child: Column(children: [
-                                  const Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 20),
-                                      child: Text(
-                                        'Ngày đi',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20,
-                                        ),
+              width: MediaQuery.of(context).size.width * 0.5,
+              height: MediaQuery.of(context).size.height * 0.7,
+              child: Scaffold(
+                backgroundColor: Colors.transparent,
+                body: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 15, bottom: 20),
+                      height: 5,
+                      width: 40,
+                      decoration: BoxDecoration(
+                          color: ColorConstants.borderColor1,
+                          borderRadius: BorderRadius.circular(5)),
+                    ),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        controller: _scrollController,
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(top: 10),
+                              height: 170,
+                              width: double.infinity,
+                              child: Column(children: [
+                                const Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(left: 20),
+                                    child: Text(
+                                      'Ngày đi',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 50,
-                                    width: double.infinity,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: <Widget>[
-                                        Padding(
-                                          padding: const EdgeInsets.only(left: 20.0),
-                                          child: Text(
-                                            'Thời gian: ${DateFormat.yMMMMd().format(_selectedDate)}',
-                                            style: const TextStyle(
-                                              fontWeight: FontWeight.normal,
-                                              fontSize: 16,
-                                            ),
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                  width: double.infinity,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: <Widget>[
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 20.0),
+                                        child: Text(
+                                          'Thời gian: ${DateFormat.yMMMMd().format(_selectedDate)}',
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 16,
                                           ),
                                         ),
-                                        IconButton(
-                                          onPressed: () =>
-                                              _selectDate(context, updateState),
-                                          icon: const Icon(
-                                              Icons.calendar_month_outlined),
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                      IconButton(
+                                        onPressed: () =>
+                                            _selectDate(context, updateState),
+                                        icon: const Icon(
+                                            Icons.calendar_month_outlined),
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(
-                                    height: 70,
-                                    width: double.infinity,
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        const Padding(
-                                          padding: EdgeInsets.only(left: 20.0),
-                                          child: Text(
-                                            'Bạn muốn ở lại trong bao lâu ?',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.normal,
-                                              fontSize: 16,
-                                            ),
+                                ),
+                                SizedBox(
+                                  height: 70,
+                                  width: double.infinity,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      const Padding(
+                                        padding: EdgeInsets.only(left: 20.0),
+                                        child: Text(
+                                          'Bạn muốn ở lại trong bao lâu ?',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 16,
                                           ),
                                         ),
-                                        Container(
-                                            height: 50,
-                                            width: double.infinity,
-                                            margin: const EdgeInsets.only(left: 20.0),
-                                            child: ListView.builder(
-                                              scrollDirection: Axis.horizontal,
-                                              itemCount: 3,
-                                              itemBuilder: (context, index) {
-                                                return Container(
-                                                  margin: const EdgeInsets.only(
-                                                      top: 10, right: 15),
-                                                  child: InkWell(
-                                                    radius: 10,
-                                                    onTap: () => updateState(() {
-                                                      indexTimeStay = index;
-                                                    }),
-                                                    child: Container(
-                                                      height: 40,
-                                                      width: 80,
-                                                      decoration: BoxDecoration(
-                                                          color: Colors.transparent,
-                                                          border: Border.all(
-                                                              width: 1,
-                                                              color: indexTimeStay ==
-                                                                      timeStayList[
-                                                                              index]
-                                                                          .index
-                                                                  ? Colors.black
-                                                                  : ColorConstants
-                                                                      .borderColor1),
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                  5)),
-                                                      child: Center(
-                                                          child: Text(
-                                                              timeStayList[index]
-                                                                  .text!)),
-                                                    ),
-                                                  ),
-                                                );
-                                              },
-                                            )),
-                                      ],
-                                    ),
-                                  ),
-                                ]),
-                              ),
-                              Divider(
-                                thickness: 2,
-                                indent: 20,
-                                endIndent: 20,
-                                color: ColorConstants.borderColor1,
-                              ),
-                              const Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: EdgeInsets.only(left: 20, top: 20),
-                                  child: Text(
-                                    'Ai sẽ đến',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                  height: 200,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(3.0),
-                                    child: whoGoWidget(updateState),
-                                  )),
-                              Divider(
-                                thickness: 2,
-                                indent: 20,
-                                endIndent: 20,
-                                color: ColorConstants.borderColor1,
-                              ),
-                              Container(
-                                margin: const EdgeInsets.only(top: 10),
-                                height: 280,
-                                width: double.infinity,
-                                child: Column(children: const [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 20),
-                                      child: Text(
-                                        'Khoảng giá',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20,
-                                        ),
                                       ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 250,
-                                    width: double.infinity,
-                                    child: ChartPriceRange(),
-                                  ),
-                                ]),
-                              ),
-                              Divider(
-                                thickness: 2,
-                                indent: 20,
-                                endIndent: 20,
-                                color: ColorConstants.borderColor1,
-                              ),
-                              const Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: EdgeInsets.only(left: 20, top: 20),
-                                  child: Text(
-                                    'Loại nơi ở',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                  height: 220,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(3.0),
-                                    child: typePlace(updateState),
-                                  )),
-                              Divider(
-                                thickness: 2,
-                                indent: 20,
-                                endIndent: 20,
-                                color: ColorConstants.borderColor1,
-                              ),
-                              const Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: EdgeInsets.only(left: 20, top: 20),
-                                  child: Text(
-                                    'Phòng và phòng ngủ',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 270,
-                                width: double.infinity,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Padding(
-                                      padding: EdgeInsets.only(left: 20.0, top: 10),
-                                      child: Text(
-                                        'Bedroom',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                    roomListView('bedroom', updateState),
-                                    const Padding(
-                                      padding: EdgeInsets.only(left: 20.0, top: 10),
-                                      child: Text(
-                                        'Bed',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                    roomListView('bed', updateState),
-                                    const Padding(
-                                      padding: EdgeInsets.only(left: 20.0, top: 10),
-                                      child: Text(
-                                        'Bathroom',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                    roomListView('bathroom', updateState),
-                                  ],
-                                ),
-                              ),
-                              Divider(
-                                thickness: 2,
-                                indent: 20,
-                                endIndent: 20,
-                                color: ColorConstants.borderColor1,
-                              ),
-                              const Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: EdgeInsets.only(left: 20, top: 20),
-                                  child: Text(
-                                    'Loại nhà/phòng',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 280,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(20),
-                                  child: GridView.builder(
-                                    physics: const NeverScrollableScrollPhysics(),
-                                    itemCount: 4,
-                                    gridDelegate:
-                                        const SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 2,
-                                      crossAxisSpacing: 20,
-                                      mainAxisSpacing: 20,
-                                      mainAxisExtent: 100,
-                                    ),
-                                    itemBuilder: (BuildContext context, int index) {
-                                      var house = typeHouseList
-                                          .firstWhere((e) => e.index == index);
-                                      return InkWell(
-                                        onTap: () => updateState(() {
-                                          typeHouseList
-                                              .removeWhere((e) => e.index == index);
-                                          typeHouseList.insert(
-                                              index,
-                                              house.copyWith(
-                                                  isCheck: !house.isCheck!));
-                                        }),
-                                        child: Container(
-                                          height: 40,
-                                          decoration: BoxDecoration(
-                                              border: Border.all(
-                                                color: typeHouseList[index].isCheck!
-                                                    ? Colors.black
-                                                    : ColorConstants
-                                                        .bottomBarItemSecondary,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(10)),
-                                          child: GridTile(
-                                              header: Align(
-                                                alignment: Alignment.centerLeft,
-                                                child: Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      left: 20.0, top: 20),
-                                                  child: SvgPicture.asset(
-                                                    typeHouseList[index].svg!,
-                                                    width: 40,
+                                      Container(
+                                          height: 50,
+                                          width: double.infinity,
+                                          margin:
+                                              const EdgeInsets.only(left: 20.0),
+                                          child: ListView.builder(
+                                            scrollDirection: Axis.horizontal,
+                                            itemCount: 3,
+                                            itemBuilder: (context, index) {
+                                              return Container(
+                                                margin: const EdgeInsets.only(
+                                                    top: 10, right: 15),
+                                                child: InkWell(
+                                                  radius: 10,
+                                                  onTap: () => updateState(() {
+                                                    indexTimeStay = index;
+                                                  }),
+                                                  child: Container(
                                                     height: 40,
-                                                    colorFilter: ColorFilter.mode(
-                                                        typeHouseList[index].isCheck!
-                                                            ? Colors.black
-                                                            : ColorConstants
-                                                                .bottomBarItemSecondary,
-                                                        BlendMode.srcIn),
+                                                    width: 80,
+                                                    decoration: BoxDecoration(
+                                                        color:
+                                                            Colors.transparent,
+                                                        border: Border.all(
+                                                            width: 1,
+                                                            color: indexTimeStay ==
+                                                                    timeStayList[
+                                                                            index]
+                                                                        .index
+                                                                ? Colors.black
+                                                                : ColorConstants
+                                                                    .borderColor1),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5)),
+                                                    child: Center(
+                                                        child: Text(
+                                                            timeStayList[index]
+                                                                .text!)),
                                                   ),
                                                 ),
-                                              ),
-                                              child: Align(
-                                                  alignment: Alignment.bottomLeft,
-                                                  child: Padding(
-                                                    padding: const EdgeInsets.only(
-                                                        left: 20.0, bottom: 10),
-                                                    child: Text(
-                                                      typeHouseList[index].text!,
-                                                      style: TextStyle(
-                                                        fontWeight: FontWeight.normal,
-                                                        color: typeHouseList[index]
-                                                                .isCheck!
-                                                            ? Colors.black
-                                                            : ColorConstants
-                                                                .bottomBarItemSecondary,
-                                                      ),
-                                                    ),
-                                                  ))), //just for testing, will fill with image later
-                                        ),
-                                      );
-                                    },
+                                              );
+                                            },
+                                          )),
+                                    ],
+                                  ),
+                                ),
+                              ]),
+                            ),
+                            Divider(
+                              thickness: 2,
+                              indent: 20,
+                              endIndent: 20,
+                              color: ColorConstants.borderColor1,
+                            ),
+                            const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                padding: EdgeInsets.only(left: 20, top: 20),
+                                child: Text(
+                                  'Ai sẽ đến',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
                                   ),
                                 ),
                               ),
-                              Divider(
-                                thickness: 2,
-                                indent: 20,
-                                endIndent: 20,
-                                color: ColorConstants.borderColor1,
-                              ),
-                              const Align(
-                                alignment: Alignment.centerLeft,
+                            ),
+                            SizedBox(
+                                height: 200,
                                 child: Padding(
-                                  padding: EdgeInsets.only(left: 20, top: 20),
-                                  child: Text(
-                                    'Tiện nghi',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: whoGoWidget(updateState),
+                                )),
+                            Divider(
+                              thickness: 2,
+                              indent: 20,
+                              endIndent: 20,
+                              color: ColorConstants.borderColor1,
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(top: 10),
+                              height: 280,
+                              width: double.infinity,
+                              child: Column(children: const [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(left: 20),
+                                    child: Text(
+                                      'Khoảng giá',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                      ),
                                     ),
                                   ),
                                 ),
+                                SizedBox(
+                                  height: 250,
+                                  width: double.infinity,
+                                  child: ChartPriceRange(),
+                                ),
+                              ]),
+                            ),
+                            Divider(
+                              thickness: 2,
+                              indent: 20,
+                              endIndent: 20,
+                              color: ColorConstants.borderColor1,
+                            ),
+                            const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                padding: EdgeInsets.only(left: 20, top: 20),
+                                child: Text(
+                                  'Loại nơi ở',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
                               ),
-                              SizedBox(
-                                height: flagShowAmenities ? 650 : 300,
-                                child: gridAmenity(updateState),
+                            ),
+                            SizedBox(
+                                height: 220,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: typePlace(updateState),
+                                )),
+                            Divider(
+                              thickness: 2,
+                              indent: 20,
+                              endIndent: 20,
+                              color: ColorConstants.borderColor1,
+                            ),
+                            const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                padding: EdgeInsets.only(left: 20, top: 20),
+                                child: Text(
+                                  'Phòng và phòng ngủ',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
                               ),
-                            ],
-                          ),
+                            ),
+                            SizedBox(
+                              height: 270,
+                              width: double.infinity,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 20.0, top: 10),
+                                    child: Text(
+                                      'Bedroom',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ),
+                                  roomListView('bedroom', updateState),
+                                  const Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 20.0, top: 10),
+                                    child: Text(
+                                      'Bed',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ),
+                                  roomListView('bed', updateState),
+                                  const Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 20.0, top: 10),
+                                    child: Text(
+                                      'Bathroom',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ),
+                                  roomListView('bathroom', updateState),
+                                ],
+                              ),
+                            ),
+                            Divider(
+                              thickness: 2,
+                              indent: 20,
+                              endIndent: 20,
+                              color: ColorConstants.borderColor1,
+                            ),
+                            const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                padding: EdgeInsets.only(left: 20, top: 20),
+                                child: Text(
+                                  'Loại nhà/phòng',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 280,
+                              child: Padding(
+                                padding: const EdgeInsets.all(20),
+                                child: GridView.builder(
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemCount: 4,
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2,
+                                    crossAxisSpacing: 20,
+                                    mainAxisSpacing: 20,
+                                    mainAxisExtent: 100,
+                                  ),
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    var house = typeHouseList
+                                        .firstWhere((e) => e.index == index);
+                                    return InkWell(
+                                      onTap: () => updateState(() {
+                                        typeHouseList.removeWhere(
+                                            (e) => e.index == index);
+                                        typeHouseList.insert(
+                                            index,
+                                            house.copyWith(
+                                                isCheck: !house.isCheck!));
+                                      }),
+                                      child: Container(
+                                        height: 40,
+                                        decoration: BoxDecoration(
+                                            border: Border.all(
+                                              color: typeHouseList[index]
+                                                      .isCheck!
+                                                  ? Colors.black
+                                                  : ColorConstants
+                                                      .bottomBarItemSecondary,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
+                                        child: GridTile(
+                                            header: Align(
+                                              alignment: Alignment.centerLeft,
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 20.0, top: 20),
+                                                child: SvgPicture.asset(
+                                                  typeHouseList[index].svg!,
+                                                  width: 40,
+                                                  height: 40,
+                                                  colorFilter: ColorFilter.mode(
+                                                      typeHouseList[index]
+                                                              .isCheck!
+                                                          ? Colors.black
+                                                          : ColorConstants
+                                                              .bottomBarItemSecondary,
+                                                      BlendMode.srcIn),
+                                                ),
+                                              ),
+                                            ),
+                                            child: Align(
+                                                alignment: Alignment.bottomLeft,
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 20.0,
+                                                          bottom: 10),
+                                                  child: Text(
+                                                    typeHouseList[index].text!,
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                      color: typeHouseList[
+                                                                  index]
+                                                              .isCheck!
+                                                          ? Colors.black
+                                                          : ColorConstants
+                                                              .bottomBarItemSecondary,
+                                                    ),
+                                                  ),
+                                                ))), //just for testing, will fill with image later
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ),
+                            Divider(
+                              thickness: 2,
+                              indent: 20,
+                              endIndent: 20,
+                              color: ColorConstants.borderColor1,
+                            ),
+                            const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                padding: EdgeInsets.only(left: 20, top: 20),
+                                child: Text(
+                                  'Tiện nghi',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: flagShowAmenities ? 650 : 300,
+                              child: gridAmenity(updateState),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              )
-            
-          );
-        }
-      ),
+              ),
+            ));
+      }),
     );
   }
+
   Widget roomListView(String title, StateSetter updateState) {
     if (title == 'bedroom') {
       return Container(
@@ -1169,7 +1201,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       crossAxisCount: 1,
       physics: const NeverScrollableScrollPhysics(),
       childAspectRatio: MediaQuery.of(context).size.width /
-          (MediaQuery.of(context).size.height / 6 ),
+          (MediaQuery.of(context).size.height / 6),
       controller: ScrollController(keepScrollOffset: true),
       shrinkWrap: true,
       children: typeWidget,

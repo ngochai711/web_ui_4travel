@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 const kPrimaryColor = Color(0xFFFFC200);
 const kTextColor = Color(0xFFFFC200);
-const kPadding =30.0;
+const kPadding = 30.0;
 const kHeaderHeight = 100.0;
+const kWidth = 800.0;
 
 Color hexToColor(String hex) {
   assert(RegExp(r'^#([0-9a-fA-F]{6})|([0-9a-fA-F]{8})$').hasMatch(hex),

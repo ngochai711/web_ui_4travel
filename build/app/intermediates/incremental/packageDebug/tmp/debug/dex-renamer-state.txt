@@ -1,0 +1,4 @@
+#Fri Feb 10 11:01:06 ICT 2023
+base.0=C\:\\MyWork\\HK5\\GTNM\\web_ui_4travel\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
