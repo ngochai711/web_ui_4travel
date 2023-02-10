@@ -14,38 +14,49 @@ class HouseTypes extends StatelessWidget {
         Row(
           children: [
             Types(
-          image_link: '../assets/images/house.png', 
-          status: 'Nhà nhỏ',),
+              image_link: '../assets/images/house.png',
+              status: 'Nhà nhỏ',
+            ),
             Types(
-          image_link: '../assets/images/cabin.png', 
-          status: 'Cabin',),
-          Types(
-          image_link: '../assets/images/tropical.png', 
-          status: 'Nhiệt đới',),
+              image_link: '../assets/images/cabin.png',
+              status: 'Cabin',
+            ),
             Types(
-          image_link: '../assets/images/countryside.png', 
-          status: 'Nông thôn',),
-          Types(
-          image_link: '../assets/images/island.png', 
-          status: 'Đảo',),
-          Types(
-          image_link: '../assets/images/trending.png', 
-          status: 'Được ưa chuộng',),
+              image_link: '../assets/images/tropical.png',
+              status: 'Nhiệt đới',
+            ),
             Types(
-          image_link: '../assets/images/barn.png', 
-          status: 'Nhà nông trại',),
+              image_link: '../assets/images/countryside.png',
+              status: 'Nông thôn',
+            ),
             Types(
-          image_link: '../assets/images/beach.png', 
-          status: 'Bãi biển',),
-          Types(
-          image_link: '../assets/images/skiing.png', 
-          status: 'Trượt tuyết',),
+              image_link: '../assets/images/island.png',
+              status: 'Đảo',
+            ),
             Types(
-          image_link: '../assets/images/camping.png', 
-          status: 'Cắm trại',),
+              image_link: '../assets/images/trending.png',
+              status: 'Được ưa chuộng',
+            ),
             Types(
-          image_link: '../assets/images/golf.png', 
-          status: 'Chơi golf',),
+              image_link: '../assets/images/barn.png',
+              status: 'Nhà nông trại',
+            ),
+            Types(
+              image_link: '../assets/images/beach.png',
+              status: 'Bãi biển',
+            ),
+            Types(
+              image_link: '../assets/images/skiing.png',
+              status: 'Trượt tuyết',
+            ),
+            Types(
+              image_link: '../assets/images/camping.png',
+              status: 'Cắm trại',
+            ),
+            Types(
+              image_link: '../assets/images/golf.png',
+              status: 'Chơi golf',
+            ),
           ],
         ) 
       ],
