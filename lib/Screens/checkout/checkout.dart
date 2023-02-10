@@ -15,7 +15,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
     'PayPal',
     'Google Pay',
   ];
-  int selectedMethod=0;
+  int selectedMethod = 0;
   String? selectedValue;
   Future<void> _launchInBrowser(Uri url) async {
     if (!await launchUrl(
@@ -25,6 +25,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
       throw Exception('Could not launch $url');
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +38,9 @@ class _CheckOutPageState extends State<CheckOutPage> {
               padding: const EdgeInsets.only(left: 150, top: 30, bottom: 30),
               child: Row(
                 children: [
-                  Icon(Icons.chevron_left),
+                  IconButton(
+                      onPressed: () => Navigator.pop(context),
+                      icon: Icon(Icons.chevron_left)),
                   SizedBox(width: 10),
                   Text(
                     "Xác nhận và thanh toán • Airbnb",
@@ -69,7 +72,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
 
   _AppBar() {
     return Container(
-      height: 50,
+      height: 80,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -77,10 +80,10 @@ class _CheckOutPageState extends State<CheckOutPage> {
             padding: const EdgeInsets.only(top: 8, left: 8),
             child: Align(
                 alignment: Alignment.centerLeft,
-                child: Image.network(
-                  "https://cdn-icons-png.flaticon.com/512/2111/2111320.png",
-                  height: 35,
-                  width: 35,
+                child: Image.asset(
+                  "../../../assets/images/logo.png",
+                  height: 60,
+                  width: 60,
                 )),
           ),
           Spacer(),
@@ -172,11 +175,13 @@ class _CheckOutPageState extends State<CheckOutPage> {
                 Flexible(
                   child: Container(
                     decoration: BoxDecoration(
-                      border:selectedMethod==0? Border.all(width: 1.5, color: Colors.black): Border(
-                      top: BorderSide(width: 1, color: Colors.grey),
-                      left: BorderSide(width: 1, color: Colors.grey),
-                      right: BorderSide(width: 1, color: Colors.grey),
-                    ),
+                      border: selectedMethod == 0
+                          ? Border.all(width: 1.5, color: Colors.black)
+                          : Border(
+                              top: BorderSide(width: 1, color: Colors.grey),
+                              left: BorderSide(width: 1, color: Colors.grey),
+                              right: BorderSide(width: 1, color: Colors.grey),
+                            ),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -197,12 +202,14 @@ class _CheckOutPageState extends State<CheckOutPage> {
                                           fontWeight: FontWeight.w600),
                                     ),
                                     InkWell(
-                                      onTap: () {
-                                        setState(() {
-                                          selectedMethod=0;
-                                        });
-                                      },
-                                      child: Icon(selectedMethod==0?Icons.radio_button_checked:Icons.radio_button_unchecked))
+                                        onTap: () {
+                                          setState(() {
+                                            selectedMethod = 0;
+                                          });
+                                        },
+                                        child: Icon(selectedMethod == 0
+                                            ? Icons.radio_button_checked
+                                            : Icons.radio_button_unchecked))
                                   ],
                                 )
                               ],
@@ -216,12 +223,15 @@ class _CheckOutPageState extends State<CheckOutPage> {
                 Flexible(
                   child: Container(
                     decoration: BoxDecoration(
-                        // borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10)),
-                        border: selectedMethod==1? Border.all(width: 1.5, color: Colors.black): Border(
-                      bottom: BorderSide(width: 1, color: Colors.grey),
-                      left: BorderSide(width: 1, color: Colors.grey),
-                      right: BorderSide(width: 1, color: Colors.grey),
-                    ),),
+                      // borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10)),
+                      border: selectedMethod == 1
+                          ? Border.all(width: 1.5, color: Colors.black)
+                          : Border(
+                              bottom: BorderSide(width: 1, color: Colors.grey),
+                              left: BorderSide(width: 1, color: Colors.grey),
+                              right: BorderSide(width: 1, color: Colors.grey),
+                            ),
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -241,12 +251,14 @@ class _CheckOutPageState extends State<CheckOutPage> {
                                           fontWeight: FontWeight.w600),
                                     ),
                                     InkWell(
-                                      onTap: () {
-                                        setState(() {
-                                          selectedMethod=1;
-                                        });
-                                      },
-                                      child: Icon(selectedMethod==1?Icons.radio_button_checked:Icons.radio_button_unchecked))
+                                        onTap: () {
+                                          setState(() {
+                                            selectedMethod = 1;
+                                          });
+                                        },
+                                        child: Icon(selectedMethod == 1
+                                            ? Icons.radio_button_checked
+                                            : Icons.radio_button_unchecked))
                                   ],
                                 )
                               ],
@@ -348,7 +360,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                   style: TextStyle(fontWeight: FontWeight.w600),
                 ),
                 InkWell(
-                  onTap:_showPhone,
+                  onTap: _showPhone,
                   child: Container(
                     decoration: BoxDecoration(border: Border.all(width: 1)),
                     child: Padding(
@@ -385,19 +397,19 @@ class _CheckOutPageState extends State<CheckOutPage> {
             ),
             RichText(
               text: TextSpan(
-                children:  <TextSpan>[
+                children: <TextSpan>[
                   TextSpan(
                       text: 'Hủy miễn phí trước 18 thg 2. ',
                       style: TextStyle(fontWeight: FontWeight.bold)),
                   TextSpan(
                       text:
                           'Bạn được hoàn tiền một phần nếu hủy trước khi nhận phòng vào 19 thg 2. '),
-                  TextSpan(  
-                    // onEnter: (event) {
-                    //     print(event.transform);
-                    //     _launchInBrowser(Uri.parse("https://www.airbnb.com.vn/help/article/149"));
-                      
-                    // },
+                  TextSpan(
+                      // onEnter: (event) {
+                      //     print(event.transform);
+                      //     _launchInBrowser(Uri.parse("https://www.airbnb.com.vn/help/article/149"));
+
+                      // },
                       text: 'Tìm hiểu thêm',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -672,6 +684,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
       ),
     );
   }
+
   _showPhone() {
     showDialog(
       context: context,
@@ -718,9 +731,16 @@ class _CheckOutPageState extends State<CheckOutPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 20,),
-                  Text("Chúng tôi sẽ gửi cho bạn thông tin cập nhật về chuyến đi cùng một tin nhắn để xác minh số điện thoại này.",style: TextStyle(fontSize: 10),),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Chúng tôi sẽ gửi cho bạn thông tin cập nhật về chuyến đi cùng một tin nhắn để xác minh số điện thoại này.",
+                    style: TextStyle(fontSize: 10),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
                   // Align(
                   //     alignment: Alignment.centerLeft,
                   //     child: Text(
@@ -740,15 +760,25 @@ class _CheckOutPageState extends State<CheckOutPage> {
                           suffixIcon: Icon(Icons.add)),
                     ),
                   ),
-                  SizedBox(height: 10,),
-                  Text("Chúng tôi sẽ nhắn tin gửi mã đến cho bạn để xác nhận số điện thoại. Có áp dụng phí dữ liệu và phí tin nhắn tiêu chuẩn.",style: TextStyle(fontSize: 10)),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                      "Chúng tôi sẽ nhắn tin gửi mã đến cho bạn để xác nhận số điện thoại. Có áp dụng phí dữ liệu và phí tin nhắn tiêu chuẩn.",
+                      style: TextStyle(fontSize: 10)),
+                  SizedBox(
+                    height: 20,
+                  ),
                   InkWell(
                     child: Container(
                       height: 40,
                       width: 90,
                       color: Colors.black,
-                      child: Center(child: Text("Tiếp tục",style: TextStyle(color: Colors.white),)),
+                      child: Center(
+                          child: Text(
+                        "Tiếp tục",
+                        style: TextStyle(color: Colors.white),
+                      )),
                     ),
                   )
                 ],

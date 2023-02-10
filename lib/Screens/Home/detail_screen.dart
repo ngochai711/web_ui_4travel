@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:web_ui_4travel/Screens/Home/components/custom_button.dart';
 import 'package:web_ui_4travel/Screens/Home/components/header_bar.dart';
 import 'package:web_ui_4travel/Screens/Home/components/header_container.dart';
+import 'package:web_ui_4travel/Screens/checkout/checkout.dart';
 
 import '../../constant.dart';
 
@@ -173,23 +174,13 @@ class DetailScreen extends StatelessWidget {
                                               height: 40,
                                               width: 40),
                                           Text(""),
-                                          Container(
-                                            padding: EdgeInsets.all(10),
-                                            decoration: BoxDecoration(
-                                              border: Border.all(width: 1),
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                            ),
-                                            child: Row(children: [
-                                              Text(
-                                                "Liên hệ chủ nhà",
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              )
-                                            ]),
-                                          ),
+                                          SizedBox(
+                                            height: 40,
+                                            child: CustomButton(
+                                                text: 'Liên hệ chủ nhà',
+                                                isFill: false,
+                                                onPress: () {}),
+                                          )
                                         ],
                                       ),
                                     ],
@@ -372,9 +363,11 @@ class DetailScreen extends StatelessWidget {
                                               height: 60,
                                               width: 140,
                                               child: CustomButton(
-                                                  text:
-                                                      'Hiển thị tất cả 18 tiện nghi',
-                                                  isFill: false),
+                                                text:
+                                                    'Hiển thị tất cả 18 tiện nghi',
+                                                isFill: false,
+                                                onPress: () {},
+                                              ),
                                             )
                                           ],
                                         ),
@@ -521,7 +514,14 @@ class DetailScreen extends StatelessWidget {
                                           height: 45,
                                           width: 300,
                                           child: CustomButton(
-                                              text: "Đặt Phòng", isFill: true),
+                                            text: "Đặt Phòng",
+                                            isFill: true,
+                                            onPress: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        CheckOutPage())),
+                                          ),
                                         ),
                                         Text("\n\n"),
                                         Row(
@@ -774,7 +774,10 @@ class DetailScreen extends StatelessWidget {
                         width: 250,
                         height: 45,
                         child: CustomButton(
-                            isFill: false, text: 'Hiển thị tất cả 83 đánh giá'),
+                          isFill: false,
+                          text: 'Hiển thị tất cả 83 đánh giá',
+                          onPress: () {},
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
@@ -1221,11 +1224,12 @@ class CustomButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.isFill,
+    required this.onPress,
   }) : super(key: key);
 
   final String text;
   final bool isFill;
-
+  final Function onPress;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -1241,7 +1245,9 @@ class CustomButton extends StatelessWidget {
                         color: !isFill
                             ? Colors.black
                             : const Color(0xFFD70465))))),
-        onPressed: () {},
+        onPressed: () {
+          onPress();
+        },
         child: Text(
           text,
           textAlign: TextAlign.center,
