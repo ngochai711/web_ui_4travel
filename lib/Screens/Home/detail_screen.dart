@@ -11,15 +11,14 @@ class DetailScreen extends StatelessWidget {
 
   get kHeaderHeight => null;
   var whoList = [
-      WhoWillGo(
-          index: 0,
-          title: 'Người lớn',
-          subTitle: 'Từ 13 tuổi trở lên',
-          amount: 0),
-      WhoWillGo(
-          index: 1, title: 'Trẻ em', subTitle: 'Độ tuổi 2 - 12', amount: 0),
-      WhoWillGo(index: 2, title: 'Em bé', subTitle: 'Dưới 2 tuổi', amount: 0),
-    ];
+    WhoWillGo(
+        index: 0,
+        title: 'Người lớn',
+        subTitle: 'Từ 13 tuổi trở lên',
+        amount: 0),
+    WhoWillGo(index: 1, title: 'Trẻ em', subTitle: 'Độ tuổi 2 - 12', amount: 0),
+    WhoWillGo(index: 2, title: 'Em bé', subTitle: 'Dưới 2 tuổi', amount: 0),
+  ];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -368,16 +367,16 @@ class DetailScreen extends StatelessWidget {
                                                     ),
                                                   ]),
                                             ),
-                                            SizedBox(
-                                              height: 60,
-                                              width: 140,
-                                              child: CustomButton(
-                                                text:
-                                                    'Hiển thị tất cả 18 tiện nghi',
-                                                isFill: false,
-                                                onPress: () {},
-                                              ),
-                                            )
+                                            // SizedBox(
+                                            //   height: 60,
+                                            //   width: 140,
+                                            //   child: CustomButton(
+                                            //     text:
+                                            //         'Hiển thị tất cả 18 tiện nghi',
+                                            //     isFill: false,
+                                            //     onPress: () {},
+                                            //   ),
+                                            // )
                                           ],
                                         ),
                                       ]),
@@ -501,51 +500,84 @@ class DetailScreen extends StatelessWidget {
                                                     right: 10),
                                                 child: InkWell(
                                                   onTap: () {
-                                                    showDialog(context: context, builder: (context) {
+                                                    showDialog(
+                                                      context: context,
+                                                      builder: (context) {
                                                         return StatefulBuilder(
-                                                          builder: (context, updateState) =>AlertDialog(
+                                                          builder: (context,
+                                                                  updateState) =>
+                                                              AlertDialog(
                                                             content: Container(
                                                               height: 280,
                                                               width: 300,
                                                               child: Column(
-                                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                                children: [
-                                                                const Align(
-                                                                                          alignment: Alignment.centerLeft,
-                                                                                          child: Padding(
-                                                                                            padding: EdgeInsets.only(left: 20, top: 20),
-                                                                                            child: Text(
-                                                                                              'Ai sẽ đến',
-                                                                                              style: TextStyle(
-                                                                                                fontWeight: FontWeight.bold,
-                                                                                                fontSize: 20,
-                                                                                              ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                        SizedBox(
-                                                                                            height: 200,
-                                                                                            child: Padding(
-                                                                                              padding: const EdgeInsets.all(3.0),
-                                                                                              child: whoGoWidget(updateState),
-                                                                                            )),
-                                                                                        
-                                                              ]),
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
+                                                                  children: [
+                                                                    const Align(
+                                                                      alignment:
+                                                                          Alignment
+                                                                              .centerLeft,
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsets.only(
+                                                                            left:
+                                                                                20,
+                                                                            top:
+                                                                                20),
+                                                                        child:
+                                                                            Text(
+                                                                          'Ai sẽ đến',
+                                                                          style:
+                                                                              TextStyle(
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            fontSize:
+                                                                                20,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    SizedBox(
+                                                                        height:
+                                                                            200,
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              const EdgeInsets.all(3.0),
+                                                                          child:
+                                                                              whoGoWidget(updateState),
+                                                                        )),
+                                                                  ]),
                                                             ),
                                                             actions: [
                                                               Padding(
-                                                                padding: const EdgeInsets.only(right: 16,bottom: 16),
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        right:
+                                                                            16,
+                                                                        bottom:
+                                                                            16),
                                                                 child: InkWell(
-                                                                                            onTap: () {
-                                                                                              Navigator.pop(context);
-                                                                                            },
-                                                                                            child: Text("Ok",style: TextStyle(fontSize: 18),),
-                                                                                          ),
+                                                                  onTap: () {
+                                                                    Navigator.pop(
+                                                                        context);
+                                                                  },
+                                                                  child: Text(
+                                                                    "Ok",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            18),
+                                                                  ),
+                                                                ),
                                                               )
                                                             ],
                                                           ),
                                                         );
-                                                    },);
+                                                      },
+                                                    );
                                                   },
                                                   child: Row(
                                                     children: [
@@ -559,7 +591,6 @@ class DetailScreen extends StatelessWidget {
                                                         ],
                                                       ),
                                                       Spacer(),
-                                                     
                                                     ],
                                                   ),
                                                 ),
@@ -1224,6 +1255,7 @@ class DetailScreen extends StatelessWidget {
       ],
     );
   }
+
   Widget whoGoWidget(StateSetter updateState) {
     final whoWidget =
         List.generate(3, (index) => _whoList(whoList[index], updateState));
@@ -1322,7 +1354,7 @@ class DetailHeader extends StatelessWidget {
                         height: 70,
                       ),
                       Text(
-                        "ustay",
+                        "UStay",
                         style: TextStyle(
                             fontSize: 20,
                             color: const Color.fromARGB(255, 247, 110, 17),
@@ -1404,6 +1436,7 @@ class ItemPlaceOffer extends StatelessWidget {
     );
   }
 }
+
 Color hexToColor(String hex) {
   assert(RegExp(r'^#([0-9a-fA-F]{6})|([0-9a-fA-F]{8})$').hasMatch(hex),
       'hex color must be #rrggbb or #rrggbbaa');
@@ -1412,16 +1445,6 @@ Color hexToColor(String hex) {
     int.parse(hex.substring(1), radix: 16) +
         (hex.length == 7 ? 0xff000000 : 0x00000000),
   );
-}
-
-class ColorConstants {
-  static Color bottomBarBackground = hexToColor('#FDD0D1');
-  static Color bottomBarItemPrimary = hexToColor('#F76E11');
-  static Color bottomBarItemSecondary = hexToColor('#767676');
-  static Color bottomBarTripBackground = hexToColor('#2C2929');
-  static Color borderColor1 = hexToColor('#DEE3EB');
-  static Color textColor1 = hexToColor('#747474');
-  static Color secondaryDarkAppColor = Colors.white;
 }
 
 class WhoWillGo {

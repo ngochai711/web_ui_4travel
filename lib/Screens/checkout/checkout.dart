@@ -457,12 +457,12 @@ class _CheckOutPageState extends State<CheckOutPage> {
             ),
             InkWell(
               child: Container(
-                color: Colors.black,
+                color: Color(0xFFF76E11),
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
                   child: Text(
-                    "Xác nhận và thanh toán • Airbnb",
+                    "Xác nhận và thanh toán • UStay",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),

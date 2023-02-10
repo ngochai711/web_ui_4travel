@@ -1,4 +1,13 @@
-2023/02/10-20:01:57.426 6350 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.573c9fad\flutter_tools_chrome_device.f96f1a87\Default\Session Storage/MANIFEST-000001
-2023/02/10-20:01:57.427 6350 Recovering log #4
-2023/02/10-20:01:57.428 6350 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.573c9fad\flutter_tools_chrome_device.f96f1a87\Default\Session Storage/000004.log 
-2023/02/10-20:01:57.428 6350 Delete type=0 #3
+<<<<<<< HEAD
+2023/02/10-21:24:19.238 3478 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.ef44c379\flutter_tools_chrome_device.8f508572\Default\Session Storage/MANIFEST-000001
+2023/02/10-21:24:19.239 3478 Recovering log #4
+2023/02/10-21:24:19.239 3478 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.ef44c379\flutter_tools_chrome_device.8f508572\Default\Session Storage/000004.log 
+2023/02/10-21:24:19.240 3478 Delete type=0 #3
+=======
+2023/02/10-11:26:40.623 904c Reusing MANIFEST C:\Users\LENOVO\AppData\Local\Temp\flutter_tools.a7e7ef21\flutter_tools_chrome_device.c21c356f\Default\Session Storage/MANIFEST-000001
+2023/02/10-11:26:40.626 904c Recovering log #3
+2023/02/10-11:26:40.626 904c Reusing old log C:\Users\LENOVO\AppData\Local\Temp\flutter_tools.a7e7ef21\flutter_tools_chrome_device.c21c356f\Default\Session Storage/000003.log 
+2023/02/10-15:31:17.296 5858 Level-0 table #5: started
+2023/02/10-15:31:17.303 5858 Level-0 table #5: 18454 bytes OK
+2023/02/10-15:31:17.307 5858 Delete type=0 #3
+>>>>>>> long
