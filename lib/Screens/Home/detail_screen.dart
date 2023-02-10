@@ -27,7 +27,7 @@ class DetailScreen extends StatelessWidget {
                       Text(
                         "Hallim-eub, Cheju, Hàn Quốc",
                         style: TextStyle(
-                            fontSize: 40, fontWeight: FontWeight.bold),
+                            fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                       Row(
                         children: <Widget>[
@@ -38,7 +38,6 @@ class DetailScreen extends StatelessWidget {
                           ),
                           Text(
                             " 4,83 ",
-                            style: TextStyle(fontSize: 24),
                           ),
                           Text(
                             ".",
@@ -47,7 +46,6 @@ class DetailScreen extends StatelessWidget {
                           ),
                           Text(
                             " 83 đánh giá ",
-                            style: TextStyle(fontSize: 24),
                           ),
                           Text(
                             ". ",
@@ -61,7 +59,6 @@ class DetailScreen extends StatelessWidget {
                           ),
                           Text(
                             " Chủ nhà siêu cấp ",
-                            style: TextStyle(fontSize: 24),
                           ),
                           Text(
                             ".  ",
@@ -71,7 +68,6 @@ class DetailScreen extends StatelessWidget {
                           Text(
                             "Hallim-eub, Cheju, Hàn Quốc",
                             style: TextStyle(
-                                fontSize: 24,
                                 fontWeight: FontWeight.bold,
                                 decoration: TextDecoration.underline),
                           ),
@@ -85,7 +81,6 @@ class DetailScreen extends StatelessWidget {
                           Text(
                             "Chia sẻ ",
                             style: TextStyle(
-                                fontSize: 20,
                                 decoration: TextDecoration.underline),
                           ),
                           Image.asset(
@@ -97,16 +92,16 @@ class DetailScreen extends StatelessWidget {
                           Text(
                             "Lưu",
                             style: TextStyle(
-                                fontSize: 20,
                                 decoration: TextDecoration.underline),
                           ),
                         ],
                       ),
+                      Text(""),
                       Container(
                         child: Row(children: <Widget>[
                           Image.asset(
                             "../assets/images/home_stay.jpg",
-                            height: 500,
+                            height: 480,
                             width: 1235,
                           )
                         ]),
@@ -133,7 +128,6 @@ class DetailScreen extends StatelessWidget {
                                             children: [
                                               Text(
                                                 "3 khách",
-                                                style: TextStyle(fontSize: 15),
                                               ),
                                               Text(
                                                 " . ",
@@ -143,7 +137,6 @@ class DetailScreen extends StatelessWidget {
                                               ),
                                               Text(
                                                 "1 phòng ngủ",
-                                                style: TextStyle(fontSize: 15),
                                               ),
                                               Text(
                                                 " . ",
@@ -153,7 +146,6 @@ class DetailScreen extends StatelessWidget {
                                               ),
                                               Text(
                                                 "1 giường",
-                                                style: TextStyle(fontSize: 15),
                                               ),
                                               Text(
                                                 " . ",
@@ -163,7 +155,6 @@ class DetailScreen extends StatelessWidget {
                                               ),
                                               Text(
                                                 "1 phòng tắm",
-                                                style: TextStyle(fontSize: 15),
                                               ),
                                             ],
                                           )
@@ -186,7 +177,6 @@ class DetailScreen extends StatelessWidget {
                                               Text(
                                                 "Liên hệ chủ nhà",
                                                 style: TextStyle(
-                                                    fontSize: 14,
                                                     fontWeight: FontWeight.bold),
                                               )
                                             ]),
@@ -209,12 +199,12 @@ class DetailScreen extends StatelessWidget {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                    Text("Our apartment has 1 living room, dining space, 1 bedroom (1 double bed and sofa bed), 1 bathroom and the balcony.\n",style: TextStyle(fontSize: 20), ),
-                                    Text("- The bedroom: Our view from the bedroom is romantic with the view of the grand hill shimmering. We provide air-conditioner, the bed topper, and the bolster.\n",style: TextStyle(fontSize: 20), ),
-                                    Text("- Kitchen: necessary facilities is provided to cook a delicious meal...\n",style: TextStyle(fontSize: 20), ),
+                                    Text("Our apartment has 1 living room, dining space, 1 bedroom (1 double bed and sofa bed), 1 bathroom and the balcony.\n"),
+                                    Text("- The bedroom: Our view from the bedroom is romantic with the view of the grand hill shimmering. We provide air-conditioner, the bed topper, and the bolster.\n"),
+                                    Text("- Kitchen: necessary facilities is provided to cook a delicious meal...\n" ),
                                     Row(
                                       children: <Widget>[
-                                        Text("Hiển thị thêm",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold), ),
+                                        Text("Hiển thị thêm",style: TextStyle(fontWeight: FontWeight.bold), ),
                                         Image.asset("../assets/images/vector.jpg"),
                                     ],)
                                     
@@ -234,8 +224,8 @@ class DetailScreen extends StatelessWidget {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
                                     Image.asset("../assets/images/logo_cover.jpg",height: 56,width: 140,),
-                                    Text("Mọi đặt phòng đều được bảo vệ miễn phí trong trường hợp Chủ nhà hủy, thông tin nhà/phòng cho thuê không chính xác và những vấn đề khác như sự cố trong quá trình nhận phòng.\n",style: TextStyle(fontSize: 20),),
-                                    Text("Tìm hiểu thêm", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,decoration: TextDecoration.underline),),
+                                    Text("Mọi đặt phòng đều được bảo vệ miễn phí trong trường hợp Chủ nhà hủy, thông tin nhà/phòng cho thuê không chính xác và những vấn đề khác như sự cố trong quá trình nhận phòng.\n"),
+                                    Text("Tìm hiểu thêm", style: TextStyle( fontWeight: FontWeight.bold,decoration: TextDecoration.underline),),
                                   ]),
                                 ),
                                 Container(
@@ -251,18 +241,18 @@ class DetailScreen extends StatelessWidget {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                    Text("Nơi này có những gì cho bạn",style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold),),
+                                    Text("Nơi này có những gì cho bạn\n",style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold),),
                                     Row(
                                       children: [
                                         Container(
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              Row(children: [Image.asset("../assets/images/kitchen.jpg",height: 31, width: 36,),Text(" Bếp",style: TextStyle(fontSize: 18),)],),
+                                              Row(children: [Image.asset("../assets/images/kitchen.jpg",height: 31, width: 36,),Text(" Bếp")],),
                                               Text(""),
-                                              Row(children: [Image.asset("../assets/images/wifi.jpg",height: 31, width: 36,),Text(" Wifi",style: TextStyle(fontSize: 18),)],),
+                                              Row(children: [Image.asset("../assets/images/wifi.jpg",height: 31, width: 36,),Text(" Wifi")],),
                                               Text(""),
-                                              Row(children: [Image.asset("../assets/images/private_space.jpg",height: 31, width: 36,),Text(" Không gian riêng để làm việc",style: TextStyle(fontSize: 18),)],),
+                                              Row(children: [Image.asset("../assets/images/private_space.jpg",height: 31, width: 36,),Text(" Không gian riêng để làm việc")],),
                                             ]
                                           ),
                                         ),
@@ -271,11 +261,11 @@ class DetailScreen extends StatelessWidget {
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              Row(children: [Image.asset("../assets/images/private_pool.jpg",height: 31, width: 36,),Text(" Hồ bơi riêng",style: TextStyle(fontSize: 18),)],),
+                                              Row(children: [Image.asset("../assets/images/private_pool.jpg",height: 31, width: 36,),Text(" Hồ bơi riêng")],),
                                               Text(""),
-                                              Row(children: [Image.asset("../assets/images/hot_water.jpg",height: 31, width: 36,),Text(" Nước nóng",style: TextStyle(fontSize: 18),)],),
+                                              Row(children: [Image.asset("../assets/images/hot_water.jpg",height: 31, width: 36,),Text(" Nước nóng")],),
                                               Text(""),
-                                              Row(children: [Image.asset("../assets/images/free_parking.jpg",height: 31, width: 36,),Text(" Chỗ đỗ xe miễn phí tại nơi ở",style: TextStyle(fontSize: 18),)],),
+                                              Row(children: [Image.asset("../assets/images/free_parking.jpg",height: 31, width: 36,),Text(" Chỗ đỗ xe miễn phí tại nơi ở")],),
                                             ]
                                           ),
                                         ),
@@ -287,7 +277,7 @@ class DetailScreen extends StatelessWidget {
                                             color: Colors.white,
                                             borderRadius: BorderRadius.circular(10)
                                           ),
-                                          child: Text("Hiển thị tất cả 18 tiện nghi",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,decoration: TextDecoration.underline),),
+                                          child: Text("Hiển thị tất cả 18 tiện nghi",style: TextStyle(fontWeight: FontWeight.bold,decoration: TextDecoration.underline),),
                                         ),
                                       ],
                                     ),
@@ -305,11 +295,11 @@ class DetailScreen extends StatelessWidget {
                               children: [
                               Container(
                                 width: 400,
-                                height: 580,
+                                height: 544,
                                 padding: EdgeInsets.all(40),
                                 decoration: BoxDecoration(
                                   border: Border.all(width: 1),
-                                  borderRadius: BorderRadius.circular(40),
+                                  borderRadius: BorderRadius.circular(13),
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -317,12 +307,12 @@ class DetailScreen extends StatelessWidget {
                                     Row(
                                       children: [
                                         Text("\u002423",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                                        Text("đêm",style: TextStyle(fontSize: 18),),
+                                        Text("đêm"),
                                         Spacer(),
                                         Image.asset("../assets/images/star.png",height: 24,width: 24,),
-                                        Text(" 4,83",style: TextStyle(fontSize: 18),),
+                                        Text(" 4,83"),
                                         Text("  .  ",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),),
-                                        Text("83 đánh giá",style: TextStyle(fontSize: 18),),
+                                        Text("83 đánh giá"),
                                       ],
                                     ),
                                     Text(""),
@@ -346,7 +336,7 @@ class DetailScreen extends StatelessWidget {
                                                 ),
                                                 child: Column(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [Text("Nhận phòng",style: TextStyle(fontSize: 16,color: Color(0xFFD70465)),),Text("8/1/2023",style: TextStyle(fontSize: 16))],)),
+                                                  children: [Text("Nhận phòng",style: TextStyle(color: Color(0xFFD70465)),),Text("8/1/2023")],)),
                                               Container(
                                                 width: 158,
                                                 height: 60,
@@ -356,7 +346,7 @@ class DetailScreen extends StatelessWidget {
                                                 ),
                                                 child: Column(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [Text("Trả phòng",style: TextStyle(fontSize: 16,color: Color(0xFFD70465)),),Text("15/1/2023",style: TextStyle(fontSize: 16))],)),
+                                                  children: [Text("Trả phòng",style: TextStyle(color: Color(0xFFD70465)),),Text("15/1/2023")],)),
 
                                             ],
                                           ),
@@ -366,7 +356,7 @@ class DetailScreen extends StatelessWidget {
                                               children: [
                                                 Column(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [Text("Khách",style: TextStyle(fontSize: 16),),Text("1 Khách",style: TextStyle(fontSize: 16))],),
+                                                  children: [Text("Khách"),Text("1 Khách")],),
                                                 Spacer(),
                                                 DropdownButtonExample(),
                                               ],
@@ -379,34 +369,35 @@ class DetailScreen extends StatelessWidget {
                                     CustomButton(text: "Đặt Phòng", isFill: true),
                                     Text("\n\n"),
                                     Row(children: [
-                                      Text("\u002423 x 8 đêm",style: TextStyle(fontSize: 18,decoration: TextDecoration.underline),),
+                                      Text("\u002423 x 8 đêm",style: TextStyle(decoration: TextDecoration.underline),),
                                       Spacer(),
-                                      Text("\u0024184",style: TextStyle(fontSize: 18),),
+                                      Text("\u0024184"),
                                     ],),
                                     Text(""),
                                     Row(children: [
-                                      Text("Phí vệ sinh",style: TextStyle(fontSize: 18,decoration: TextDecoration.underline),),
+                                      Text("Phí vệ sinh",style: TextStyle(decoration: TextDecoration.underline),),
                                       Spacer(),
-                                      Text("\u00246",style: TextStyle(fontSize: 18),),
+                                      Text("\u00246"),
                                     ],),
                                     Text(""),
                                     Row(children: [
-                                      Text("Phí dịch vụ",style: TextStyle(fontSize: 18,decoration: TextDecoration.underline),),
+                                      Text("Phí dịch vụ",style: TextStyle(decoration: TextDecoration.underline),),
                                       Spacer(),
-                                      Text("\u002427",style: TextStyle(fontSize: 18),),
+                                      Text("\u002427"),
                                     ],),
                                     Text("\n"),
                                     Container(
                                       width: 400,
-                                      height: 50,
+                                      height: 30,
+                                      padding: EdgeInsets.only(top: 10),
                                       decoration: BoxDecoration(
                                         border: Border(top: BorderSide(width: 1,color:Colors.grey)),
                                       ),
                                       child: Row(
                                         children: [
-                                          Text("Tổng trước thuế",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,)),
+                                          Text("Tổng trước thuế",style: TextStyle(fontWeight: FontWeight.bold,)),
                                           Spacer(),
-                                          Text("\u0024217",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),),
+                                          Text("\u0024217",style: TextStyle(fontWeight: FontWeight.bold,),),
                                         ],
                                       ),
                                     ), 
