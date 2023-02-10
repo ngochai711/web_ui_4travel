@@ -6,6 +6,8 @@ import 'components/header_container.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:intl/intl.dart';
 
+import 'components/reponsive.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -179,188 +181,201 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size(size.width, 100),
+          child: const HeaderContainer(),
+        ),
         resizeToAvoidBottomInset: true,
         backgroundColor: Colors.white,
-        body: Column(
+        body: ResponsiveWidget(
+          largeScreen: mainScreen(),
+        )
+              );
+  }
+  Widget mainScreen() {
+    Size size = MediaQuery.of(context).size;
+    return Column(
           children: [
             Expanded(
-              flex: 2,
-              child: HeaderContainer(size: size)),
-            // ProductList(size: size),
-            Expanded(
               flex: 10,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children:  [
-                  SizedBox(
-                    height: size.height * 0.1,
-                    child: Container(
-                      padding: const EdgeInsets.only(left: 70.0),
-                      width: size.width,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          IconButton(
-                            
-                            onPressed: (){
-                             _scrollTab(true);
-                          }, icon:  Icon(Icons.arrow_circle_left_outlined,
-                              color:  ColorConstants.bottomBarItemPrimary
-                                    .withOpacity(0.5)), iconSize: 30,),
-                          Expanded(
-                            flex: 5,
-                            child: SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              controller: _tabScrollController,
-                              child: TabBar(
-                                isScrollable: true,
-                                controller: _tabController,
-                                physics: const BouncingScrollPhysics(),
-                                labelColor: Colors.black,
-                                unselectedLabelColor: ColorConstants.textColor1,
-                                indicatorColor: Colors.black,
-                                tabs: tabs
-                                    .map(
-                                      (e) => FittedBox(
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(right: 10.0),
-                                          child: Tab(
-                                            icon: SvgPicture.asset(
-                                              e.assetIcon!,
-                                              height: 20,
-                                              width: 20,
-                                              colorFilter: ColorFilter.mode(
-                                                  indexTab == e.index!
-                                                      ? Colors.black
-                                                      : ColorConstants.textColor1,
-                                                  BlendMode.srcIn),
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:  [
+                    SizedBox(
+                      height: size.height * 0.1,
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 70.0),
+                        width: size.width,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              
+                              onPressed: (){
+                               _scrollTab(true);
+                            }, icon:  Icon(Icons.arrow_circle_left_outlined,
+                                color:  ColorConstants.bottomBarItemPrimary
+                                      .withOpacity(0.5)), iconSize: 30,),
+                            Expanded(
+                              flex: 5,
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                controller: _tabScrollController,
+                                child: TabBar(
+                                  isScrollable: true,
+                                  controller: _tabController,
+                                  physics: const BouncingScrollPhysics(),
+                                  labelColor: Colors.black,
+                                  unselectedLabelColor: ColorConstants.textColor1,
+                                  indicatorColor: Colors.black,
+                                  tabs: tabs
+                                      .map(
+                                        (e) => FittedBox(
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(right: 10.0),
+                                            child: Tab(
+                                              icon: SvgPicture.asset(
+                                                e.assetIcon!,
+                                                height: 20,
+                                                width: 20,
+                                                colorFilter: ColorFilter.mode(
+                                                    indexTab == e.index!
+                                                        ? Colors.black
+                                                        : ColorConstants.textColor1,
+                                                    BlendMode.srcIn),
+                                              ),
+                                              text: e.text!,
                                             ),
-                                            text: e.text!,
                                           ),
                                         ),
-                                      ),
-                                    )
-                                    .toList(),
+                                      )
+                                      .toList(),
+                                ),
                               ),
                             ),
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              _scrollTab(false);
-                            },
-                            icon:  Icon(Icons.arrow_circle_right_outlined , color: ColorConstants.bottomBarItemPrimary.withOpacity(0.5),),
-                            iconSize: 30,
-                          ),
-                          Expanded(
-                            flex: 1,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  height: 35,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        width: 0.5,
-                                        color: ColorConstants.borderColor1),
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(46),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        blurRadius: 1,
-                                        blurStyle: BlurStyle.outer,
-                                        color: ColorConstants.borderColor1,
-                                      ),
-                                    ],
-                                  ),
-                                  child: InkWell(
-                                    onTap: () {
-                                      showFilter();
-                                    },
-                                    child: SizedBox(
-                                      width: 70,
-                                      child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: <Widget>[
-                                            SvgPicture.asset(
-                                              "assets/icons/filter.svg",
-                                            ),
-                                            const Text('Bộ lọc')
-                                          ]),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                            IconButton(
+                              onPressed: () {
+                                _scrollTab(false);
+                              },
+                              icon:  Icon(Icons.arrow_circle_right_outlined , color: ColorConstants.bottomBarItemPrimary.withOpacity(0.5),),
+                              iconSize: 30,
                             ),
-                          ),
-                        ],
+                            Expanded(
+                              flex: 1,
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: 35,
+                                      width: 100,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: 0.5,
+                                            color: ColorConstants.borderColor1),
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(46),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 1,
+                                            blurStyle: BlurStyle.outer,
+                                            color: ColorConstants.borderColor1,
+                                          ),
+                                        ],
+                                      ),
+                                      child: InkWell(
+                                        onTap: () {
+                                          showFilter();
+                                        },
+                                        child: SizedBox(
+                                          width: 70,
+                                          child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: <Widget>[
+                                                SvgPicture.asset(
+                                                  "assets/icons/filter.svg",
+                                                ),
+                                                const Text('Bộ lọc')
+                                              ]),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Expanded(
-                    child: TabBarView(
-                      controller: _tabController,
-                      children: [
-                        SingleChildScrollView(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                            child: GridView.builder(
-                               shrinkWrap: true,
-                                physics: const ScrollPhysics(),
-                                gridDelegate:
-                                    const SliverGridDelegateWithFixedCrossAxisCount(
-                                      childAspectRatio: 1,
-                                        crossAxisCount: 4),
-                                scrollDirection: Axis.vertical,                            
-                                itemCount: 40,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return Container(
-                                    height: 350,
-                                    width: double.infinity,
-                                    margin: const EdgeInsets.symmetric(horizontal: 20 ),
-                                    
-                                    child: itemRender(),
-                                  );
-                                }),
-                          ),
-                        ),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                        const Text('hi'),
-                      ],
+                    const SizedBox(
+                      height: 10,
                     ),
-                  )
-                ],
-              ),
+                    Expanded(
+                      child: TabBarView(
+                        controller: _tabController,
+                        children: [
+                          SingleChildScrollView(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                              child: GridView.builder(
+                                 shrinkWrap: true,
+                                  physics: const ScrollPhysics(),
+                                  gridDelegate:
+                                  const SliverGridDelegateWithMaxCrossAxisExtent(
+                                maxCrossAxisExtent: 400,
+                                mainAxisSpacing: 16,
+                                crossAxisSpacing: 9,
+                                mainAxisExtent: 400,
+                              ),
+                                  scrollDirection: Axis.vertical,                            
+                                  itemCount: 40,
+                                  itemBuilder: (BuildContext context, int index) {
+                                    return Container(
+                                     
+                                      margin: const EdgeInsets.symmetric(horizontal: 20 ),
+                                      
+                                      child: itemRender(size),
+                                    );
+                                  }),
+                            ),
+                          ),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                          const Text('hi'),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
             ),
-          ],
-        ));
+    )],
+    );
   }
-  Widget itemRender() {
+  Widget itemRender(Size size) {
     return Column(
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 250,
+          height: size.height * 0.4,
           
           decoration: BoxDecoration(
             color: Colors.transparent,
@@ -1153,7 +1168,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     return GridView.count(
       crossAxisCount: 1,
       physics: const NeverScrollableScrollPhysics(),
-      childAspectRatio: 15,
+      childAspectRatio: MediaQuery.of(context).size.width /
+          (MediaQuery.of(context).size.height / 6 ),
       controller: ScrollController(keepScrollOffset: true),
       shrinkWrap: true,
       children: typeWidget,

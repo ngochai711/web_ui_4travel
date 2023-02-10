@@ -9,29 +9,42 @@ class HeadBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(left: 100.0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Row(children: [
-                Image.asset("assets/images/logo.png"),
-                 Text('UStay' , style: TextStyle(
-                  color: ColorConstants.bottomBarItemPrimary,
-                  fontSize: 25,fontWeight: FontWeight.bold
-
-                ),)
-              ],)),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Padding(
+              padding:  EdgeInsets.only(left: size.width / 9),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Row(children: [
+                  Image.asset("assets/images/logo.png"),
+                   Text('UStay' , style: TextStyle(
+                    color: ColorConstants.bottomBarItemPrimary,
+                    fontSize: 25,fontWeight: FontWeight.bold
+          
+                  ),)
+                ],)),
+            ),
           ),
         ),
-        const Expanded(
+         Expanded(
           flex: 1,
-          child: HeaderWebFeature()),
-        const Expanded(
-            child: OptionUser()
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal, child: Padding(
+              padding: EdgeInsets.only(left: size.width * 0.1),
+              child: const HeaderWebFeature(),
+            ))),
+         Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: EdgeInsets.only(left: size.width * 0.1),
+                child: const OptionUser(),
+              ))
           ),
         
       ],
@@ -48,7 +61,7 @@ class OptionUser extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             HeaderFeature(
               press: () {  }, 

@@ -6,16 +6,15 @@ import 'header_bar.dart';
 class HeaderContainer extends StatelessWidget {
   const HeaderContainer({
     Key? key,
-    required this.size,
   }) : super(key: key);
 
-  final Size size;
+
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
-      width: MediaQuery.of(context).size.width ,
-      height: MediaQuery.of(context).size.height,
+     
       color: Colors.white,
       
       child: Column(
