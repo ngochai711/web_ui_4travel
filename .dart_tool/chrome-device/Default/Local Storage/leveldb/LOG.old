@@ -1,23 +1,18 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-2023/02/10-21:24:19.199 3478 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.ef44c379\flutter_tools_chrome_device.8f508572\Default\Local Storage\leveldb/MANIFEST-000001
-2023/02/10-21:24:19.200 3478 Recovering log #3
-2023/02/10-21:24:19.200 3478 Recovering log #4
-2023/02/10-21:24:19.202 3478 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.ef44c379\flutter_tools_chrome_device.8f508572\Default\Local Storage\leveldb/000004.log 
-2023/02/10-21:24:19.202 3478 Delete type=2 #5
-=======
->>>>>>> 79c5282951aa7e95199f5de7472d931a067a6dcf
-2023/02/10-11:26:40.633 904c Reusing MANIFEST C:\Users\LENOVO\AppData\Local\Temp\flutter_tools.a7e7ef21\flutter_tools_chrome_device.c21c356f\Default\Local Storage\leveldb/MANIFEST-000001
-2023/02/10-11:26:40.637 904c Recovering log #5
-2023/02/10-11:26:40.638 904c Reusing old log C:\Users\LENOVO\AppData\Local\Temp\flutter_tools.a7e7ef21\flutter_tools_chrome_device.c21c356f\Default\Local Storage\leveldb/000005.log 
-2023/02/10-11:26:40.639 904c Delete type=0 #3
-2023/02/10-11:26:40.639 904c Delete type=0 #4
-2023/02/10-11:26:40.639 904c Delete type=2 #5
-2023/02/10-15:36:17.954 7db4 Level-0 table #9: started
-2023/02/10-15:36:17.958 7db4 Level-0 table #9: 24576 bytes OK
-2023/02/10-15:36:17.962 7db4 Delete type=0 #5
-<<<<<<< HEAD
-=======
->>>>>>> long
->>>>>>> 79c5282951aa7e95199f5de7472d931a067a6dcf
+2023/02/10-15:52:40.394 9858 Reusing MANIFEST C:\Users\LENOVO\AppData\Local\Temp\flutter_tools.578fc68e\flutter_tools_chrome_device.49dbbb9f\Default\Local Storage\leveldb/MANIFEST-000001
+2023/02/10-15:52:40.396 9858 Recovering log #8
+2023/02/10-15:52:40.398 9858 Reusing old log C:\Users\LENOVO\AppData\Local\Temp\flutter_tools.578fc68e\flutter_tools_chrome_device.49dbbb9f\Default\Local Storage\leveldb/000008.log 
+2023/02/10-15:52:40.399 9858 Delete type=0 #3
+2023/02/10-15:52:40.399 9858 Delete type=0 #4
+2023/02/10-15:52:40.399 9858 Delete type=2 #5
+2023/02/10-15:52:40.399 9858 Delete type=0 #5
+2023/02/10-16:29:35.612 7828 Level-0 table #12: started
+2023/02/10-16:29:35.616 7828 Level-0 table #12: 14709 bytes OK
+2023/02/10-16:29:35.618 7828 Delete type=0 #8
+2023/02/10-16:29:35.619 7828 Compacting 4@0 + 0@1 files
+2023/02/10-16:29:35.622 7828 Generated table #13@0: 90 keys, 16069 bytes
+2023/02/10-16:29:35.622 7828 Compacted 4@0 + 0@1 files => 16069 bytes
+2023/02/10-16:29:35.623 7828 compacted to: files[ 0 1 0 0 0 0 0 ]
+2023/02/10-16:29:35.624 7828 Delete type=2 #3
+2023/02/10-16:29:35.624 7828 Delete type=2 #6
+2023/02/10-16:29:35.624 7828 Delete type=2 #9
+2023/02/10-16:29:35.624 7828 Delete type=2 #12

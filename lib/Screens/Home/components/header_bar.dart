@@ -17,7 +17,7 @@ class HeadBar extends StatelessWidget {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Padding(
-              padding: EdgeInsets.only(left: size.width / 9),
+              padding: const EdgeInsets.only(left: 70),
               child: Align(
                   alignment: Alignment.centerLeft,
                   child: Row(
@@ -47,7 +47,7 @@ class HeadBar extends StatelessWidget {
             child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
-                  padding: EdgeInsets.only(left: size.width * 0.1),
+                  padding: EdgeInsets.only(left: size.width * 0.22),
                   child: const OptionUser(),
                 ))),
       ],
@@ -63,7 +63,7 @@ class OptionUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         // HeaderFeature(
@@ -78,6 +78,7 @@ class OptionUser extends StatelessWidget {
         // ),
         Container(
           height: 35,
+          alignment: Alignment.centerRight,
           decoration: BoxDecoration(
             border: Border.all(width: 0.5, color: ColorConstants.borderColor1),
             color: Colors.white,

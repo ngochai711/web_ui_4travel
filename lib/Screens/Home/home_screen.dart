@@ -426,7 +426,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 Positioned(
                     right: 10,
                     top: 10,
-                    child: IconButton(
+                    child: IconButton(autopl
                       icon: const Icon(
                         Icons.favorite_border,
                         color: Colors.white,
@@ -518,7 +518,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     ),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFFF76E11)),
+                            backgroundColor: const Color(0xFFF76E11)),
                         onPressed: () {
                           Navigator.of(context).pop();
                           Navigator.push(context,
